@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Reviews &mdash; Studio Resinique</title>
+  <meta name="description" content="Read what our little community says about Studio Resinique's handmade resin jewelry — earrings, pendants, rings, jhumka and custom keepsakes." />
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Dancing+Script:wght@500;600;700&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- ===== Announcement bar ===== -->
+  <div class="topbar">
+    <p>Handmade in small batches &middot; Shipped nationwide across Pakistan</p>
+  </div>
+
+  <!-- ===== Header ===== -->
+  <header class="site-header" id="top">
+    <div class="container header-inner">
+      <a href="index.html" class="logo">
+        <img src="images/logo.jpeg" alt="Studio Resinique" class="logo-img" />
+        <span class="logo-text">Studio Resinique</span>
+      </a>
+
+      <nav class="nav" id="nav">
+        <div class="nav-item has-dropdown">
+          <a href="index.html#categories" class="nav-link nav-link--drop">Categories
+            <svg class="nav-caret" viewBox="0 0 24 24" width="12" height="12" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 9l6 6 6-6" /></svg>
+          </a>
+          <div class="dropdown">
+            <div class="dropdown-grid">
+              <a class="dropdown-link" href="category.html?cat=earrings">
+                <span class="dropdown-thumb"><img src="images/product-4.jpeg" alt="" loading="lazy" /></span>
+                <span class="dropdown-name">Earrings</span>
+              </a>
+              <a class="dropdown-link" href="category.html?cat=pendants">
+                <span class="dropdown-thumb"><img src="images/product-7.jpeg" alt="" loading="lazy" /></span>
+                <span class="dropdown-name">Pendants</span>
+              </a>
+              <a class="dropdown-link" href="category.html?cat=rings">
+                <span class="dropdown-thumb"><img src="images/product-2.jpeg" alt="" loading="lazy" /></span>
+                <span class="dropdown-name">Rings</span>
+              </a>
+              <a class="dropdown-link" href="category.html?cat=keychains">
+                <span class="dropdown-thumb"><img src="images/product-9.jpeg" alt="" loading="lazy" /></span>
+                <span class="dropdown-name">Keychains</span>
+              </a>
+              <a class="dropdown-link" href="category.html?cat=bangles">
+                <span class="dropdown-thumb"><img src="images/product-5.jpeg" alt="" loading="lazy" /></span>
+                <span class="dropdown-name">Bangles</span>
+              </a>
+              <a class="dropdown-link" href="category.html?cat=jhumka">
+                <span class="dropdown-thumb"><img src="images/product-1.jpeg" alt="" loading="lazy" /></span>
+                <span class="dropdown-name">Jhumka</span>
+              </a>
+              <a class="dropdown-link" href="category.html?cat=accessories">
+                <span class="dropdown-thumb"><img src="images/product-8.jpeg" alt="" loading="lazy" /></span>
+                <span class="dropdown-name">Other Accessories</span>
+              </a>
+            </div>
+            <a class="dropdown-foot link-arrow" href="index.html#categories">View all categories <span class="arrow">&rarr;</span></a>
+          </div>
+        </div>
+        <a href="events.html">Events</a>
+        <a href="reviews.html">Reviews</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+
+      <div class="header-actions">
+        <a href="https://wa.me/923159185551?text=Hi%20Studio%20Resinique%2C%20I%27d%20like%20to%20place%20a%20custom%20order" target="_blank" rel="noopener noreferrer" class="btn btn-small">Custom Order</a>
+        <button class="cart-btn" id="cartBtn" type="button" aria-label="Open cart">
+          <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M6 8h12l-1 11.5a1.5 1.5 0 0 1-1.5 1.4H8.5A1.5 1.5 0 0 1 7 19.5L6 8z" />
+            <path d="M9 8V6.5a3 3 0 0 1 6 0V8" />
+          </svg>
+          <span class="cart-count" id="cartCount" hidden>0</span>
+        </button>
+        <button class="nav-toggle" id="navToggle" aria-label="Open menu" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- ===== Reviews hero ===== -->
+    <section class="cat-hero">
+      <div class="container">
+        <p class="cat-crumb"><a href="index.html">Home</a> / <span>Reviews</span></p>
+        <p class="eyebrow">Kind Words</p>
+        <h1>Loved by our little community</h1>
+        <p class="cat-blurb">Real words from the people who wear our pieces every day &mdash; and trusted us with their most treasured memories.</p>
+        <div class="rating-summary">
+          <span class="rating-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
+          <span class="rating-text"><strong>4.9</strong> &middot; loved by 500+ customers</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== Reviews grid ===== -->
+    <section class="reviews reviews-page">
+      <div class="container">
+        <div class="review-grid">
+          <figure class="review review--blush">
+            <span class="review-mark" aria-hidden="true">&ldquo;</span>
+            <div class="review-stars" aria-label="Rated 5 out of 5">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+            <blockquote class="review-text">My pendant looks like a tiny galaxy. I get stopped and asked about it constantly &mdash; the colours are even prettier in daylight.</blockquote>
+            <figcaption class="review-author">
+              <span class="review-avatar" aria-hidden="true">A</span>
+              <span class="review-author-info">
+                <span class="review-name">Ayesha K.</span>
+                <span class="review-meta">Islamabad &middot; Tide Pool Pendant</span>
+              </span>
+            </figcaption>
+          </figure>
+
+          <figure class="review review--sage">
+            <span class="review-mark" aria-hidden="true">&ldquo;</span>
+            <div class="review-stars" aria-label="Rated 5 out of 5">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+            <blockquote class="review-text">Bought these as a gift and they were a huge hit. The detailing is gorgeous and the packaging was so thoughtful.</blockquote>
+            <figcaption class="review-author">
+              <span class="review-avatar" aria-hidden="true">B</span>
+              <span class="review-author-info">
+                <span class="review-name">Bilal R.</span>
+                <span class="review-meta">Lahore &middot; Aurora Drop Earrings</span>
+              </span>
+            </figcaption>
+          </figure>
+
+          <figure class="review review--lilac">
+            <span class="review-mark" aria-hidden="true">&ldquo;</span>
+            <div class="review-stars" aria-label="Rated 5 out of 5">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+            <blockquote class="review-text">Ordered a custom keepsake with flowers from my wedding. I cried when it arrived. Truly heirloom quality.</blockquote>
+            <figcaption class="review-author">
+              <span class="review-avatar" aria-hidden="true">F</span>
+              <span class="review-author-info">
+                <span class="review-name">Fatima S.</span>
+                <span class="review-meta">Karachi &middot; Custom Keepsake</span>
+              </span>
+            </figcaption>
+          </figure>
+
+          <figure class="review review--blush">
+            <span class="review-mark" aria-hidden="true">&ldquo;</span>
+            <div class="review-stars" aria-label="Rated 5 out of 5">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+            <blockquote class="review-text">The ring fits perfectly and the pearl fleck catches the light beautifully. You can feel how much care went into it.</blockquote>
+            <figcaption class="review-author">
+              <span class="review-avatar" aria-hidden="true">H</span>
+              <span class="review-author-info">
+                <span class="review-name">Hira M.</span>
+                <span class="review-meta">Rawalpindi &middot; Lilac Haze Ring</span>
+              </span>
+            </figcaption>
+          </figure>
+
+          <figure class="review review--sage">
+            <span class="review-mark" aria-hidden="true">&ldquo;</span>
+            <div class="review-stars" aria-label="Rated 4 out of 5">&#9733;&#9733;&#9733;&#9733;&#9734;</div>
+            <blockquote class="review-text">Beautiful pendant and quick delivery. Wish there were more chain length options, but the piece itself is lovely.</blockquote>
+            <figcaption class="review-author">
+              <span class="review-avatar" aria-hidden="true">U</span>
+              <span class="review-author-info">
+                <span class="review-name">Usman A.</span>
+                <span class="review-meta">Lahore &middot; Goldleaf Pendant</span>
+              </span>
+            </figcaption>
+          </figure>
+
+          <figure class="review review--lilac">
+            <span class="review-mark" aria-hidden="true">&ldquo;</span>
+            <div class="review-stars" aria-label="Rated 5 out of 5">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+            <blockquote class="review-text">These studs are my everyday pair now. Lightweight, hypoallergenic, and the pressed petals are just stunning.</blockquote>
+            <figcaption class="review-author">
+              <span class="review-avatar" aria-hidden="true">Z</span>
+              <span class="review-author-info">
+                <span class="review-name">Zara N.</span>
+                <span class="review-meta">Islamabad &middot; Blush Bloom Studs</span>
+              </span>
+            </figcaption>
+          </figure>
+
+          <figure class="review review--blush">
+            <span class="review-mark" aria-hidden="true">&ldquo;</span>
+            <div class="review-stars" aria-label="Rated 5 out of 5">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+            <blockquote class="review-text">The meadow locket holds flowers from my late grandmother's garden. It means the world to me. Thank you, Studio Resinique.</blockquote>
+            <figcaption class="review-author">
+              <span class="review-avatar" aria-hidden="true">S</span>
+              <span class="review-author-info">
+                <span class="review-name">Sana T.</span>
+                <span class="review-meta">Multan &middot; Meadow Locket</span>
+              </span>
+            </figcaption>
+          </figure>
+
+          <figure class="review review--sage">
+            <span class="review-mark" aria-hidden="true">&ldquo;</span>
+            <div class="review-stars" aria-label="Rated 5 out of 5">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+            <blockquote class="review-text">Wore the jhumkas to a wedding and got endless compliments. They're surprisingly light for how detailed they are.</blockquote>
+            <figcaption class="review-author">
+              <span class="review-avatar" aria-hidden="true">A</span>
+              <span class="review-author-info">
+                <span class="review-name">Aliya H.</span>
+                <span class="review-meta">Karachi &middot; Celestia Jhumka</span>
+              </span>
+            </figcaption>
+          </figure>
+
+          <figure class="review review--lilac">
+            <span class="review-mark" aria-hidden="true">&ldquo;</span>
+            <div class="review-stars" aria-label="Rated 4 out of 5">&#9733;&#9733;&#9733;&#9733;&#9734;</div>
+            <blockquote class="review-text">Gorgeous bangle, exactly as pictured. Took a few extra days to arrive but the quality made it worth the wait.</blockquote>
+            <figcaption class="review-author">
+              <span class="review-avatar" aria-hidden="true">M</span>
+              <span class="review-author-info">
+                <span class="review-name">Maha F.</span>
+                <span class="review-meta">Faisalabad &middot; Rosewater Bangle</span>
+              </span>
+            </figcaption>
+          </figure>
+        </div>
+
+        <div class="reviews-foot">
+          <p>Wearing a piece you love? We'd be honoured to hear about it.</p>
+          <a class="btn" href="https://wa.me/923159185551?text=Hi%20Studio%20Resinique%2C%20I%27d%20like%20to%20share%20a%20review%20of%20my%20order" target="_blank" rel="noopener noreferrer">Share your review</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ===== Footer ===== -->
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <a href="index.html" class="logo">
+          <img src="images/logo.jpeg" alt="Studio Resinique" class="logo-img" />
+          <span class="logo-text">Studio Resinique</span>
+        </a>
+        <p>Tiny worlds you can wear. Handmade resin jewelry, poured one piece at a time.</p>
+      </div>
+
+      <nav class="footer-col">
+        <h4>Shop</h4>
+        <a href="category.html?cat=earrings">Earrings</a>
+        <a href="category.html?cat=pendants">Pendants</a>
+        <a href="category.html?cat=rings">Rings</a>
+        <a href="category.html?cat=jhumka">Jhumka</a>
+      </nav>
+
+      <nav class="footer-col">
+        <h4>Studio</h4>
+        <a href="index.html#story">Our Story</a>
+        <a href="index.html#process">How It's Made</a>
+        <a href="reviews.html">Reviews</a>
+      </nav>
+
+      <nav class="footer-col">
+        <h4>Follow</h4>
+        <a href="https://www.instagram.com/studio_resinique?igsh=bW12Njgwdzg2NG5n&utm_source=qr" target="_blank" rel="noopener noreferrer">Instagram</a>
+        <a href="https://www.tiktok.com/@studio_resinique?_r=1&_t=ZS-972TvlXnA24" target="_blank" rel="noopener noreferrer">TikTok</a>
+        <a href="https://wa.me/923159185551?text=Hi%20Studio%20Resinique%2C%20I%27d%20like%20to%20ask%20about%20your%20resin%20jewelry" target="_blank" rel="noopener noreferrer">WhatsApp</a>
+      </nav>
+    </div>
+
+    <div class="container footer-bottom">
+      <p>&copy; 2026 Studio Resinique. Handmade with care.</p>
+      <div class="footer-legal">
+        <a href="#">Privacy</a>
+        <a href="#">Shipping &amp; Returns</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ===== Floating WhatsApp ===== -->
+  <a class="wa-float" href="https://wa.me/923159185551?text=Hi%20Studio%20Resinique%2C%20I%27d%20like%20to%20know%20more%20about%20your%20jewelry" target="_blank" rel="noopener noreferrer" aria-label="Chat with us on WhatsApp">
+    <svg viewBox="0 0 32 32" width="30" height="30" fill="currentColor" aria-hidden="true">
+      <path d="M16.04 4C9.93 4 5 8.93 5 15.04c0 2.05.56 3.96 1.53 5.6L5 27l6.53-1.5a11 11 0 0 0 4.5.96h.01C22.16 26.46 27 21.53 27 15.42 27 9.31 22.15 4 16.04 4zm6.43 15.56c-.27.76-1.58 1.46-2.18 1.5-.56.05-1.07.25-3.6-.75-3.03-1.2-4.95-4.28-5.1-4.48-.15-.2-1.22-1.62-1.22-3.1 0-1.48.77-2.2 1.05-2.5.27-.3.6-.38.8-.38l.57.01c.18.01.43-.07.67.52.27.64.92 2.22 1 2.38.08.16.13.35.02.55-.1.2-.16.33-.3.5-.16.18-.33.4-.47.54-.16.16-.32.33-.14.64.18.3.8 1.32 1.72 2.14 1.18 1.05 2.18 1.38 2.5 1.53.3.16.5.13.67-.08.18-.2.77-.9.98-1.2.2-.3.4-.25.67-.15.27.1 1.7.8 2 .95.3.15.5.22.56.34.07.12.07.7-.2 1.46z" />
+    </svg>
+  </a>
+
+  <!-- ===== Cart drawer ===== -->
+  <div class="cart-backdrop" id="cartBackdrop"></div>
+  <aside class="cart-drawer" id="cartDrawer" aria-hidden="true" aria-label="Your cart">
+    <div class="cart-head">
+      <h3>Your Cart</h3>
+      <button class="cart-close" id="cartClose" type="button" aria-label="Close cart">&times;</button>
+    </div>
+    <div class="cart-body" id="cartItems"></div>
+    <div class="cart-foot">
+      <div class="cart-subtotal">
+        <span>Subtotal</span>
+        <span id="cartTotal">Rs&nbsp;0</span>
+      </div>
+      <a class="btn cart-action" id="cartCheckoutBtn" href="checkout.html">Checkout</a>
+      <a class="btn btn-ghost cart-action" id="cartCheckout" href="#" target="_blank" rel="noopener noreferrer">Order via WhatsApp</a>
+      <p class="cart-note">Checkout online, or confirm the details with us on WhatsApp.</p>
+    </div>
+  </aside>
+
+  <!-- ===== Checkout modal ===== -->
+  <div class="checkout-backdrop" id="checkoutBackdrop"></div>
+  <div class="checkout-modal" id="checkoutModal" role="dialog" aria-modal="true" aria-labelledby="checkoutTitle" aria-hidden="true">
+    <button class="checkout-close" id="checkoutClose" type="button" aria-label="Close checkout">&times;</button>
+
+    <div class="checkout-main" id="checkoutMain">
+      <p class="eyebrow">Almost there</p>
+      <h3 id="checkoutTitle">Checkout</h3>
+
+      <div class="checkout-summary" id="checkoutSummary"></div>
+
+      <form class="checkout-form" id="checkoutForm" novalidate>
+        <div class="field-row">
+          <div class="field">
+            <label for="coName">Full name</label>
+            <input id="coName" name="name" type="text" autocomplete="name" required />
+          </div>
+          <div class="field">
+            <label for="coPhone">Phone</label>
+            <input id="coPhone" name="phone" type="tel" autocomplete="tel" placeholder="03XX XXXXXXX" required />
+          </div>
+        </div>
+        <div class="field-row">
+          <div class="field">
+            <label for="coCity">City</label>
+            <input id="coCity" name="city" type="text" autocomplete="address-level2" required />
+          </div>
+          <div class="field">
+            <label for="coEmail">Email <span class="field-opt">(optional)</span></label>
+            <input id="coEmail" name="email" type="email" autocomplete="email" />
+          </div>
+        </div>
+        <div class="field">
+          <label for="coAddress">Delivery address</label>
+          <textarea id="coAddress" name="address" rows="2" autocomplete="street-address" required></textarea>
+        </div>
+        <div class="field">
+          <label for="coNotes">Order notes <span class="field-opt">(optional)</span></label>
+          <textarea id="coNotes" name="notes" rows="2" placeholder="Custom colours, gift note, etc."></textarea>
+        </div>
+
+        <div class="field pay-section">
+          <p class="pay-label">Payment method</p>
+
+          <label class="pay-option">
+            <input type="radio" name="payment" value="Bank Transfer" checked />
+            <span class="pay-card">
+              <span class="pay-card-head">
+                <span class="pay-name">Bank Transfer</span>
+                <span class="pay-tick" aria-hidden="true">&#10003;</span>
+              </span>
+              <span class="pay-details">
+                <span>Account Title: <strong>Studio Resinique</strong></span>
+                <span>Bank: <strong>[Your Bank Name]</strong></span>
+                <span>Account No: <strong>0000 0000 0000</strong></span>
+                <span>IBAN: <strong>PK00 0000 0000 0000 0000 00</strong></span>
+              </span>
+            </span>
+          </label>
+
+          <label class="pay-option">
+            <input type="radio" name="payment" value="Easypaisa" />
+            <span class="pay-card">
+              <span class="pay-card-head">
+                <span class="pay-name">Easypaisa</span>
+                <span class="pay-tick" aria-hidden="true">&#10003;</span>
+              </span>
+              <span class="pay-details">
+                <span>Account Title: <strong>Studio Resinique</strong></span>
+                <span>Number: <strong>0334-5466335</strong></span>
+              </span>
+            </span>
+          </label>
+
+          <p class="pay-note">After sending the payment, please WhatsApp us the screenshot at <a href="https://wa.me/923159185551" target="_blank" rel="noopener noreferrer">+92&nbsp;315&nbsp;9185551</a> to confirm your order.</p>
+        </div>
+
+        <p class="checkout-error" id="checkoutError" role="alert"></p>
+        <button type="submit" class="btn checkout-submit">Place Order</button>
+      </form>
+    </div>
+
+    <div class="checkout-success" id="checkoutSuccess" hidden>
+      <div class="checkout-tick" aria-hidden="true">&#10003;</div>
+      <h3>Thank you, <span id="checkoutSuccessName">friend</span>!</h3>
+      <p>Your order has been received. We'll confirm the details with you shortly on WhatsApp.</p>
+      <button type="button" class="btn checkout-done" id="checkoutDone">Continue shopping</button>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

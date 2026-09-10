@@ -1,0 +1,916 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Studio Resinique &mdash; Handmade Resin Jewelry</title>
+  <meta name="description" content="Studio Resinique crafts one-of-a-kind handmade resin jewelry — pieces poured, set, and finished by hand. Wearable little worlds of colour and light." />
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Dancing+Script:wght@500;600;700&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- ===== Announcement bar ===== -->
+  <div class="topbar">
+    <p>Handmade in small batches &middot; Shipped nationwide across Pakistan</p>
+  </div>
+
+  <!-- ===== Header ===== -->
+  <header class="site-header" id="top">
+    <div class="container header-inner">
+      <a href="#top" class="logo">
+        <img src="images/logo.jpeg" alt="Studio Resinique" class="logo-img" />
+        <span class="logo-text">Studio Resinique</span>
+      </a>
+
+      <nav class="nav" id="nav">
+        <div class="nav-item has-dropdown">
+          <a href="#categories" class="nav-link nav-link--drop">Categories
+            <svg class="nav-caret" viewBox="0 0 24 24" width="12" height="12" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 9l6 6 6-6" /></svg>
+          </a>
+          <div class="dropdown">
+            <div class="dropdown-grid">
+              <a class="dropdown-link" href="category.html?cat=earrings">
+                <span class="dropdown-thumb"><img src="images/product-4.jpeg" alt="" loading="lazy" /></span>
+                <span class="dropdown-name">Earrings</span>
+              </a>
+              <a class="dropdown-link" href="category.html?cat=pendants">
+                <span class="dropdown-thumb"><img src="images/product-7.jpeg" alt="" loading="lazy" /></span>
+                <span class="dropdown-name">Pendants</span>
+              </a>
+              <a class="dropdown-link" href="category.html?cat=rings">
+                <span class="dropdown-thumb"><img src="images/product-2.jpeg" alt="" loading="lazy" /></span>
+                <span class="dropdown-name">Rings</span>
+              </a>
+              <a class="dropdown-link" href="category.html?cat=keychains">
+                <span class="dropdown-thumb"><img src="images/product-9.jpeg" alt="" loading="lazy" /></span>
+                <span class="dropdown-name">Keychains</span>
+              </a>
+              <a class="dropdown-link" href="category.html?cat=bangles">
+                <span class="dropdown-thumb"><img src="images/product-5.jpeg" alt="" loading="lazy" /></span>
+                <span class="dropdown-name">Bangles</span>
+              </a>
+              <a class="dropdown-link" href="category.html?cat=jhumka">
+                <span class="dropdown-thumb"><img src="images/product-1.jpeg" alt="" loading="lazy" /></span>
+                <span class="dropdown-name">Jhumka</span>
+              </a>
+              <a class="dropdown-link" href="category.html?cat=accessories">
+                <span class="dropdown-thumb"><img src="images/product-8.jpeg" alt="" loading="lazy" /></span>
+                <span class="dropdown-name">Other Accessories</span>
+              </a>
+            </div>
+            <a class="dropdown-foot link-arrow" href="#categories">View all categories <span class="arrow">&rarr;</span></a>
+          </div>
+        </div>
+        <a href="events.html">Events</a>
+        <a href="reviews.html">Reviews</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+
+      <div class="header-actions">
+        <a href="https://wa.me/923159185551?text=Hi%20Studio%20Resinique%2C%20I%27d%20like%20to%20place%20a%20custom%20order" target="_blank" rel="noopener noreferrer" class="btn btn-small">Custom Order</a>
+        <button class="cart-btn" id="cartBtn" type="button" aria-label="Open cart">
+          <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M6 8h12l-1 11.5a1.5 1.5 0 0 1-1.5 1.4H8.5A1.5 1.5 0 0 1 7 19.5L6 8z" />
+            <path d="M9 8V6.5a3 3 0 0 1 6 0V8" />
+          </svg>
+          <span class="cart-count" id="cartCount" hidden>0</span>
+        </button>
+        <button class="nav-toggle" id="navToggle" aria-label="Open menu" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+
+    <!-- ===== Hero ===== -->
+    <section class="hero">
+      <div class="container hero-inner">
+        <div class="hero-copy">
+          <p class="eyebrow">Handmade Resin Jewelry</p>
+          <h1>Tiny worlds you can wear.</h1>
+          <p class="lede">
+            Each piece is poured, cured, and polished by hand — capturing
+            petals, pigment, and light in heirloom-quality resin. No two are
+            ever quite the same.
+          </p>
+          <div class="hero-cta">
+            <a href="#shop" class="btn">Explore the Collection</a>
+            <a href="#story" class="link-arrow">Our story <span class="arrow">&rarr;</span></a>
+          </div>
+          <ul class="hero-trust">
+            <li>One-of-a-kind</li>
+            <li>Hypoallergenic findings</li>
+            <li>Made to last</li>
+          </ul>
+        </div>
+
+        <div class="hero-art">
+          <div class="hero-orb orb-1" aria-hidden="true"></div>
+          <div class="hero-orb orb-2" aria-hidden="true"></div>
+          <div class="hero-orb orb-3" aria-hidden="true"></div>
+          <div class="hero-card">
+            <span class="hero-card-tag">New</span>
+            <div class="hero-card-gem">
+              <img src="images/product-8.jpeg" alt="Petal &amp; Gold Pendant" loading="lazy" />
+            </div>
+            <p class="hero-card-name">Sky Bloom Jhumkas</p>
+            <p class="hero-card-price">Rs&nbsp;1250</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== Marquee strip ===== -->
+    <!-- Two identical groups; the animation shifts by exactly one group (-50%) for a seamless loop. -->
+    <div class="marquee">
+      <div class="marquee-track">
+        <div class="marquee-group">
+          <span>Pendants</span><span>&#10047;</span>
+          <span>Earrings</span><span>&#10047;</span>
+          <span>Rings</span><span>&#10047;</span>
+          <span>Keychains</span><span>&#10047;</span>
+          <span>Keepsakes</span><span>&#10047;</span>
+          <span>Custom Pieces</span><span>&#10047;</span>
+          <span>Pendants</span><span>&#10047;</span>
+          <span>Earrings</span><span>&#10047;</span>
+          <span>Rings</span><span>&#10047;</span>
+          <span>Keychains</span><span>&#10047;</span>
+          <span>Keepsakes</span><span>&#10047;</span>
+          <span>Custom Pieces</span><span>&#10047;</span>
+          <span>Pendants</span><span>&#10047;</span>
+          <span>Earrings</span><span>&#10047;</span>
+          <span>Rings</span><span>&#10047;</span>
+          <span>Keychains</span><span>&#10047;</span>
+          <span>Keepsakes</span><span>&#10047;</span>
+          <span>Custom Pieces</span><span>&#10047;</span>
+        </div>
+        <div class="marquee-group" aria-hidden="true">
+          <span>Pendants</span><span>&#10047;</span>
+          <span>Earrings</span><span>&#10047;</span>
+          <span>Rings</span><span>&#10047;</span>
+          <span>Keychains</span><span>&#10047;</span>
+          <span>Keepsakes</span><span>&#10047;</span>
+          <span>Custom Pieces</span><span>&#10047;</span>
+          <span>Pendants</span><span>&#10047;</span>
+          <span>Earrings</span><span>&#10047;</span>
+          <span>Rings</span><span>&#10047;</span>
+          <span>Keychains</span><span>&#10047;</span>
+          <span>Keepsakes</span><span>&#10047;</span>
+          <span>Custom Pieces</span><span>&#10047;</span>
+          <span>Pendants</span><span>&#10047;</span>
+          <span>Earrings</span><span>&#10047;</span>
+          <span>Rings</span><span>&#10047;</span>
+          <span>Keychains</span><span>&#10047;</span>
+          <span>Keepsakes</span><span>&#10047;</span>
+          <span>Custom Pieces</span><span>&#10047;</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- ===== Featured products ===== -->
+    <section id="shop" class="shop">
+      <div class="container">
+        <header class="section-head">
+          <p class="eyebrow">Bestsellers</p>
+          <h2>Pieces loved most</h2>
+          <p class="section-sub">A handful of favourites from the studio bench.</p>
+        </header>
+
+        <div class="product-grid">
+          <article class="product">
+            <div class="product-media">
+              <img src="images/jhumka-4.jpeg" alt="Blush Rose Jhumkas" loading="lazy" />
+              <button class="wishlist" aria-label="Add to wishlist">&#9825;</button>
+            </div>
+            <div class="product-info">
+              <h3>Blush Rose Jhumkas</h3>
+              <p class="product-meta">Pressed petals &middot; gold-fill</p>
+              <p class="product-price">Rs&nbsp;2500</p>
+              <button class="add-cart" type="button">Order Now</button>
+            </div>
+          </article>
+
+          <article class="product">
+            <div class="product-media">
+              <img src="images/earrings-2.png" alt="Petal Bell Drops" loading="lazy" />
+              <span class="product-badge">Bestseller</span>
+              <button class="wishlist" aria-label="Add to wishlist">&#9825;</button>
+            </div>
+            <div class="product-info">
+              <h3>Petal Bell Drops</h3>
+              <p class="product-meta">Pressed bloom &middot; tiny silver bells</p>
+              <p class="product-price">Rs&nbsp;550</p>
+              <button class="add-cart" type="button">Order Now</button>
+            </div>
+          </article>
+
+          <article class="product">
+            <div class="product-media">
+              <img src="images/product-8.jpeg" alt="Sky Bloom Jhumkas" loading="lazy" />
+              <button class="wishlist" aria-label="Add to wishlist">&#9825;</button>
+            </div>
+            <div class="product-info">
+              <h3>Sky Bloom Jhumkas</h3>
+              <p class="product-meta">Adjustable &middot; pearl fleck</p>
+              <p class="product-price">Rs&nbsp;1250</p>
+              <button class="add-cart" type="button">Order Now</button>
+            </div>
+          </article>
+
+          <article class="product">
+            <div class="product-media">
+              <img src="images/product-4.jpeg" alt="Mini Flutter Earrings" loading="lazy" />
+              <span class="product-badge">New</span>
+              <button class="wishlist" aria-label="Add to wishlist">&#9825;</button>
+            </div>
+            <div class="product-info">
+              <h3>Mini Flutter Earrings</h3>
+              <p class="product-meta">Real marigold &middot; 14k plate</p>
+              <p class="product-price">Rs&nbsp;450</p>
+              <button class="add-cart" type="button">Order Now</button>
+            </div>
+          </article>
+        </div>
+
+        <div class="shop-foot">
+          <a href="#" class="link-arrow">View all jewelry <span class="arrow">&rarr;</span></a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== New Collection ===== -->
+    <section id="new-collection" class="collection">
+      <div class="container">
+        <header class="collection-head">
+          <div class="collection-intro">
+            <p class="eyebrow">Just Dropped</p>
+            <h2>The new collection</h2>
+            <p class="section-sub">Fresh pours from the bench &mdash; small batches, restocked rarely. Swipe to explore.</p>
+          </div>
+          <div class="collection-nav">
+            <button class="carousel-btn" type="button" data-dir="-1" aria-label="Previous pieces">&larr;</button>
+            <button class="carousel-btn" type="button" data-dir="1" aria-label="Next pieces">&rarr;</button>
+          </div>
+        </header>
+      </div>
+
+      <div class="container collection-viewport">
+        <div class="collection-track" id="collectionTrack">
+          <article class="product collection-card">
+            <div class="product-media">
+              <img src="images/product-9.jpeg" alt="Rose & Gold Trio" loading="lazy" />
+              <span class="product-badge">New</span>
+              <button class="wishlist" aria-label="Add to wishlist">&#9825;</button>
+            </div>
+            <div class="product-info">
+              <h3>Rose & Gold Trio</h3>
+              <p class="product-meta">Iridescent swirl &middot; gold-fill</p>
+              <p class="product-price">Rs&nbsp;1400</p>
+              <button class="add-cart" type="button">Order Now</button>
+            </div>
+          </article>
+
+          <article class="product collection-card">
+            <div class="product-media">
+              <img src="images/product-1.jpeg" alt="Heartbloom Earrings" loading="lazy" />
+              <span class="product-badge">New</span>
+              <button class="wishlist" aria-label="Add to wishlist">&#9825;</button>
+            </div>
+            <div class="product-info">
+              <h3>Heartbloom Earrings</h3>
+              <p class="product-meta">Pressed wildflowers &middot; sterling</p>
+              <p class="product-price">Rs&nbsp;750</p>
+              <button class="add-cart" type="button">Order Now</button>
+            </div>
+          </article>
+
+          <article class="product collection-card">
+            <div class="product-media">
+              <img src="images/product-2.jpeg" alt="Bloom Drop Earrings" loading="lazy" />
+              <span class="product-badge">New</span>
+              <button class="wishlist" aria-label="Add to wishlist">&#9825;</button>
+            </div>
+            <div class="product-info">
+              <h3>Bloom Drop Earrings</h3>
+              <p class="product-meta">Adjustable &middot; pearl fleck</p>
+              <p class="product-price">Rs&nbsp;650</p>
+              <button class="add-cart" type="button">Order Now</button>
+            </div>
+          </article>
+
+          <article class="product collection-card">
+            <div class="product-media">
+              <img src="images/jhumka-5.png" alt="Garden Bloom Jhumkas" loading="lazy" />
+              <span class="product-badge">New</span>
+              <button class="wishlist" aria-label="Add to wishlist">&#9825;</button>
+            </div>
+            <div class="product-info">
+              <h3>Garden Bloom Jhumkas</h3>
+              <p class="product-meta">Midnight resin &middot; silver bells</p>
+              <p class="product-price">Rs&nbsp;2500</p>
+              <button class="add-cart" type="button">Order Now</button>
+            </div>
+          </article>
+
+          <article class="product collection-card">
+            <div class="product-media">
+              <img src="images/product-5.jpeg" alt="Aurora Pens" loading="lazy" />
+              <span class="product-badge">New</span>
+              <button class="wishlist" aria-label="Add to wishlist">&#9825;</button>
+            </div>
+            <div class="product-info">
+              <h3>Aurora Pens</h3>
+              <p class="product-meta">Blush bloom &middot; gold leaf</p>
+              <p class="product-price">Rs&nbsp;500</p>
+              <button class="add-cart" type="button">Order Now</button>
+            </div>
+          </article>
+
+          <article class="product collection-card">
+            <div class="product-media">
+              <img src="images/pendant-1.png" alt="Goldleaf Pendant" loading="lazy" />
+              <span class="product-badge">New</span>
+              <button class="wishlist" aria-label="Add to wishlist">&#9825;</button>
+            </div>
+            <div class="product-info">
+              <h3>Goldleaf Pendant</h3>
+              <p class="product-meta">Real gold leaf &middot; sterling chain</p>
+              <p class="product-price">Rs&nbsp;850</p>
+              <button class="add-cart" type="button">Order Now</button>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== Categories ===== -->
+    <section id="categories" class="categories">
+      <div class="container">
+        <header class="section-head">
+          <p class="eyebrow">Browse the Studio</p>
+          <h2>Shop by category</h2>
+          <p class="section-sub">Find your next little treasure, by the kind of piece you love.</p>
+        </header>
+
+        <div class="category-grid">
+          <article class="category">
+            <div class="category-media">
+              <img src="images/product-4.jpeg" alt="Handmade resin earrings" loading="lazy" />
+            </div>
+            <div class="category-body">
+              <h3>Earrings</h3>
+              <a href="category.html?cat=earrings" class="btn category-btn">View Category</a>
+            </div>
+          </article>
+
+          <article class="category">
+            <div class="category-media">
+              <img src="images/pendant-1.png" alt="Handmade resin pendants" loading="lazy" />
+            </div>
+            <div class="category-body">
+              <h3>Pendants</h3>
+              <a href="category.html?cat=pendants" class="btn category-btn">View Category</a>
+            </div>
+          </article>
+
+          <article class="category">
+            <div class="category-media">
+              <img src="images/ring-1.PNG" alt="Handmade resin rings" loading="lazy" />
+            </div>
+            <div class="category-body">
+              <h3>Rings</h3>
+              <a href="category.html?cat=rings" class="btn category-btn">View Category</a>
+            </div>
+          </article>
+
+          <article class="category">
+            <div class="category-media">
+              <img src="images/keychain.png" alt="Handmade resin initial keychains with pressed petals and gold leaf" loading="lazy" />
+            </div>
+            <div class="category-body">
+              <h3>Keychains</h3>
+              <a href="category.html?cat=keychains" class="btn category-btn">View Category</a>
+            </div>
+          </article>
+
+          <article class="category">
+            <div class="category-media">
+              <img src="images/bangles-1.png" alt="Handmade resin bangles" loading="lazy" />
+            </div>
+            <div class="category-body">
+              <h3>Bangles</h3>
+              <a href="category.html?cat=bangles" class="btn category-btn">View Category</a>
+            </div>
+          </article>
+
+          <article class="category">
+            <div class="category-media">
+              <img src="images/jhumka-4.jpeg" alt="Handmade resin jhumka" loading="lazy" />
+            </div>
+            <div class="category-body">
+              <h3>Jhumka</h3>
+              <a href="category.html?cat=jhumka" class="btn category-btn">View Category</a>
+            </div>
+          </article>
+
+          <article class="category">
+            <div class="category-media">
+              <img src="images/mini-1.png" alt="Handmade resin mini jhumka" loading="lazy" />
+            </div>
+            <div class="category-body">
+              <h3>Mini Jhumka</h3>
+              <a href="category.html?cat=mini-jhumka" class="btn category-btn">View Category</a>
+            </div>
+          </article>
+
+          <article class="category">
+            <div class="category-media">
+              <img src="images/product-5.jpeg" alt="Other handmade resin accessories" loading="lazy" />
+            </div>
+            <div class="category-body">
+              <h3>Other Accessories</h3>
+              <a href="category.html?cat=accessories" class="btn category-btn">View Category</a>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== Custom orders CTA ===== -->
+    <section id="custom" class="custom">
+      <div class="container">
+        <div class="custom-banner">
+          <div class="custom-orb custom-orb-1" aria-hidden="true"></div>
+          <div class="custom-orb custom-orb-2" aria-hidden="true"></div>
+
+          <div class="custom-content">
+            <p class="eyebrow">Made just for you</p>
+            <h2>Dreaming of something one&#8209;of&#8209;a&#8209;kind?</h2>
+            <p class="custom-sub">
+              Every piece above is ready to dispatch &mdash; but we love a blank canvas too.
+              Pick your colours, flowers, and style, and we'll pour something made
+              entirely for you (or to preserve a memory you treasure).
+            </p>
+
+            <ul class="custom-features">
+              <li>Choose your palette</li>
+              <li>Add keepsakes &amp; flowers</li>
+              <li>Pick the piece &amp; finish</li>
+            </ul>
+
+            <div class="custom-cta">
+              <a href="https://wa.me/923159185551?text=Hi%20Studio%20Resinique%2C%20I%27d%20like%20to%20place%20a%20custom%20order" target="_blank" rel="noopener noreferrer" class="btn">Start a Custom Order</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== Story ===== -->
+    <section id="story" class="story">
+      <div class="container story-inner">
+        <div class="story-art">
+          <div class="story-frame frame-1">
+            <img src="images/product-7.jpeg" alt="Resin jewelry curing on the studio bench" loading="lazy" />
+          </div>
+          <div class="story-frame frame-2">
+            <img src="images/product-5.jpeg" alt="Finished handmade resin piece" loading="lazy" />
+          </div>
+        </div>
+        <div class="story-copy">
+          <p class="eyebrow">Our Story</p>
+          <h2>Made by hand, on a small bench by the window.</h2>
+          <p>
+            Studio Resinique began with a single mould and a fascination for the way
+            light moves through resin. Every piece is still made the same way —
+            mixed in tiny batches, layered over days, and finished with a slow,
+            careful polish.
+          </p>
+          <p>
+            We forage and press our own flowers, blend custom pigments, and only
+            use hypoallergenic, tarnish-resistant findings so your piece can be
+            worn every day.
+          </p>
+          <a href="#process" class="link-arrow">See how it's made &rarr;</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== Process ===== -->
+    <section id="process" class="process">
+      <div class="container">
+        <header class="section-head">
+          <p class="eyebrow">How It's Made</p>
+          <h2>From pour to polish</h2>
+        </header>
+
+        <ol class="steps">
+          <li class="step">
+            <span class="step-num">01</span>
+            <h3>Gather &amp; press</h3>
+            <p>Flowers and botanicals are hand-picked, pressed, and dried until perfectly preserved.</p>
+          </li>
+          <li class="step">
+            <span class="step-num">02</span>
+            <h3>Mix &amp; pour</h3>
+            <p>Resin is measured by hand, tinted with custom pastel pigments, and poured in thin layers.</p>
+          </li>
+          <li class="step">
+            <span class="step-num">03</span>
+            <h3>Cure &amp; set</h3>
+            <p>Each piece cures slowly over several days, then is sanded smooth and set with gold-fill findings.</p>
+          </li>
+          <li class="step">
+            <span class="step-num">04</span>
+            <h3>Polish &amp; pack</h3>
+            <p>A final hand polish brings the shine, then it's wrapped and sent with a little care card.</p>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- ===== Our Events ===== -->
+    <section id="events" class="events">
+      <div class="container">
+        <header class="section-head">
+          <p class="eyebrow">Out &amp; About</p>
+          <h2>Catch us at our events</h2>
+          <p class="section-sub">A peek at our recent pop-ups and stalls &mdash; come say hello at the next one.</p>
+        </header>
+
+        <div class="events-grid">
+          <article class="event event-feature">
+            <img src="images/product-7.jpeg" alt="Studio Resinique stall at the Hunar Eid Bazaar in Islamabad" loading="lazy" />
+            <div class="event-overlay">
+              <span class="event-location">
+                <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <path d="M12 21s-6-5.3-6-10a6 6 0 1 1 12 0c0 4.7-6 10-6 10z" />
+                  <circle cx="12" cy="11" r="2" />
+                </svg>
+                Islamabad
+              </span>
+              <h3 class="event-name">Hunar Eid Bazaar</h3>
+              <p class="event-detail">Our festive Eid stall &mdash; three days of handmade joy.</p>
+            </div>
+          </article>
+
+          <article class="event">
+            <img src="images/product-6.jpeg" alt="Studio Resinique pop-up at Chandani Raatain in Islamabad" loading="lazy" />
+            <div class="event-overlay">
+              <span class="event-location">
+                <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <path d="M12 21s-6-5.3-6-10a6 6 0 1 1 12 0c0 4.7-6 10-6 10z" />
+                  <circle cx="12" cy="11" r="2" />
+                </svg>
+                Islamabad
+              </span>
+              <h3 class="event-name">Chandani Raatain</h3>
+              <p class="event-detail">Moonlit evenings of florals &amp; keepsakes.</p>
+            </div>
+          </article>
+
+          <article class="event">
+            <img src="images/product-9.jpeg" alt="Studio Resinique at Chaand Rat Bazaar in Islamabad" loading="lazy" />
+            <div class="event-overlay">
+              <span class="event-location">
+                <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <path d="M12 21s-6-5.3-6-10a6 6 0 1 1 12 0c0 4.7-6 10-6 10z" />
+                  <circle cx="12" cy="11" r="2" />
+                </svg>
+                Islamabad
+              </span>
+              <h3 class="event-name">Chaand Rat Bazaar</h3>
+              <p class="event-detail">A buzzing Chaand Raat night of last-minute sparkle.</p>
+            </div>
+          </article>
+
+          <article class="event">
+            <img src="images/product-5.jpeg" alt="Studio Resinique at Mera Payara Pakistan event in Islamabad" loading="lazy" />
+            <div class="event-overlay">
+              <span class="event-location">
+                <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <path d="M12 21s-6-5.3-6-10a6 6 0 1 1 12 0c0 4.7-6 10-6 10z" />
+                  <circle cx="12" cy="11" r="2" />
+                </svg>
+                Islamabad
+              </span>
+              <h3 class="event-name">Mera Payara Pakistan</h3>
+              <p class="event-detail">An Independence Day celebration of local makers.</p>
+            </div>
+          </article>
+
+          <article class="event">
+            <img src="images/product-2.jpeg" alt="Studio Resinique at Chaand Rat Bazar in Islamabad" loading="lazy" />
+            <div class="event-overlay">
+              <span class="event-location">
+                <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <path d="M12 21s-6-5.3-6-10a6 6 0 1 1 12 0c0 4.7-6 10-6 10z" />
+                  <circle cx="12" cy="11" r="2" />
+                </svg>
+                Islamabad
+              </span>
+              <h3 class="event-name">Chaand Rat Bazar</h3>
+              <p class="event-detail">A festive Chaand Raat pop-up full of sparkle.</p>
+            </div>
+          </article>
+        </div>
+
+        <div class="events-foot">
+          <a href="events.html" class="link-arrow">See all our events <span class="arrow">&rarr;</span></a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== Reviews ===== -->
+    <section id="reviews" class="reviews">
+      <div class="container">
+        <header class="section-head">
+          <p class="eyebrow">Kind Words</p>
+          <h2>From our little community</h2>
+          <div class="rating-summary">
+            <span class="rating-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
+            <span class="rating-text"><strong>4.9</strong> &middot; loved by 500+ customers</span>
+          </div>
+        </header>
+
+        <div class="review-grid">
+          <figure class="review review--blush">
+            <span class="review-mark" aria-hidden="true">&ldquo;</span>
+            <div class="review-stars" aria-label="Rated 5 out of 5">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+            <blockquote class="review-text">I'm so happy with my order! The resin jewelry is beautiful and looks even prettier in person. I've already received so many compliments.</blockquote>
+            <figcaption class="review-author">
+              <span class="review-avatar" aria-hidden="true">S</span>
+              <span class="review-author-info">
+                <span class="review-name">Sana Ahmed.</span>
+                <span class="review-meta">Islamabad &middot; Tide Pool Pendant</span>
+              </span>
+            </figcaption>
+          </figure>
+
+          <figure class="review review--sage">
+            <span class="review-mark" aria-hidden="true">&ldquo;</span>
+            <div class="review-stars" aria-label="Rated 5 out of 5">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+            <blockquote class="review-text">Bought these as a gift and they were a huge hit. The colors and details are gorgeous, and the packaging was super cute too.</blockquote>
+            <figcaption class="review-author">
+              <span class="review-avatar" aria-hidden="true">M</span>
+              <span class="review-author-info">
+                <span class="review-name">Murtaza Saleem.</span>
+                <span class="review-meta">Lahore &middot; Blush Bloom Studs</span>
+              </span>
+            </figcaption>
+          </figure>
+
+          <figure class="review review--lilac">
+            <span class="review-mark" aria-hidden="true">&ldquo;</span>
+            <div class="review-stars" aria-label="Rated 5 out of 5">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+            <blockquote class="review-text">Ordered a custom keepsake with flowers for my wedding.Absolutely love it! They're so pretty and even better in person. </blockquote>
+            <figcaption class="review-author">
+              <span class="review-avatar" aria-hidden="true">E</span>
+              <span class="review-author-info">
+                <span class="review-name">Emaan Khan.</span>
+                <span class="review-meta">Karachi &middot; Custom Keepsake</span>
+              </span>
+            </figcaption>
+          </figure>
+        </div>
+
+        <div class="reviews-foot">
+          <a href="reviews.html" class="link-arrow">Read all reviews <span class="arrow">&rarr;</span></a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== Connect / Social ===== -->
+    <section id="contact" class="connect">
+      <div class="connect-orb connect-orb-1" aria-hidden="true"></div>
+      <div class="connect-orb connect-orb-2" aria-hidden="true"></div>
+
+      <div class="container">
+        <header class="section-head">
+          <p class="eyebrow">Stay in touch</p>
+          <h2>Come say hello</h2>
+          <p class="section-sub">Peek behind the studio bench, catch new drops first, and message us any time &mdash; we'd love to hear from you.</p>
+        </header>
+
+        <div class="social-grid">
+          <!-- Instagram -->
+          <a class="social social--ig" href="https://www.instagram.com/studio_resinique?igsh=bW12Njgwdzg2NG5n&utm_source=qr" target="_blank" rel="noopener noreferrer" aria-label="Follow Studio Resinique on Instagram">
+            <span class="social-icon">
+              <svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <rect x="3.2" y="3.2" width="17.6" height="17.6" rx="5" />
+                <circle cx="12" cy="12" r="4" />
+                <circle cx="17.3" cy="6.7" r="0.6" fill="currentColor" stroke="none" />
+              </svg>
+            </span>
+            <span class="social-info">
+              <span class="social-name">Instagram</span>
+              <span class="social-handle">@studio_resinique</span>
+            </span>
+            <span class="social-cta">Follow <span class="arrow">&rarr;</span></span>
+          </a>
+
+          <!-- TikTok -->
+          <a class="social social--tt" href="https://www.tiktok.com/@studio_resinique?_r=1&_t=ZS-972TvlXnA24" target="_blank" rel="noopener noreferrer" aria-label="Follow Studio Resinique on TikTok">
+            <span class="social-icon">
+              <svg viewBox="0 0 24 24" width="25" height="25" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M13 4v10.5a3.5 3.5 0 1 1-3.5-3.5" />
+                <path d="M13 4a5 5 0 0 0 5 4.2" />
+              </svg>
+            </span>
+            <span class="social-info">
+              <span class="social-name">TikTok</span>
+              <span class="social-handle">@studio_resinique</span>
+            </span>
+            <span class="social-cta">Follow <span class="arrow">&rarr;</span></span>
+          </a>
+
+          <!-- WhatsApp -->
+          <a class="social social--wa" href="https://wa.me/923159185551?text=Hi%20Studio%20Resinique%2C%20I%27d%20like%20to%20ask%20about%20your%20resin%20jewelry" target="_blank" rel="noopener noreferrer" aria-label="Message Studio Resinique on WhatsApp">
+            <span class="social-icon">
+              <svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M3.5 20.5l1.25-3.7A7.6 7.6 0 1 1 7.7 19.25L3.5 20.5z" />
+                <path d="M8.9 8.4c-.25 0-.55.1-.75.45-.2.35-.65.85-.65 1.7s.7 1.85 1.55 2.9c.85 1.05 1.85 1.6 2.9 2 .85.3 1.45.25 1.95-.1.4-.3.65-.75.6-1.15-.05-.15-.4-.3-.85-.5-.45-.2-.85-.4-.95-.05-.1.35-.45.6-.65.55-.5-.1-1.1-.5-1.6-1-.4-.5-.7-1.05-.6-1.3.1-.25.45-.35.55-.6.1-.25-.4-1.2-.55-1.6-.15-.4-.3-.4-.5-.4z" />
+              </svg>
+            </span>
+            <span class="social-info">
+              <span class="social-name">WhatsApp</span>
+              <span class="social-handle">Chat with the studio</span>
+            </span>
+            <span class="social-cta">Message <span class="arrow">&rarr;</span></span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ===== Footer ===== -->
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <a href="#top" class="logo">
+          <img src="images/logo.jpeg" alt="Studio Resinique" class="logo-img" />
+          <span class="logo-text">Studio Resinique</span>
+        </a>
+        <p>Tiny worlds you can wear. Handmade resin jewelry, poured one piece at a time.</p>
+      </div>
+
+      <nav class="footer-col">
+        <h4>Shop</h4>
+        <a href="#shop">Necklaces</a>
+        <a href="#shop">Earrings</a>
+        <a href="#shop">Rings</a>
+        <a href="#shop">Custom Pieces</a>
+      </nav>
+
+      <nav class="footer-col">
+        <h4>Studio</h4>
+        <a href="#story">Our Story</a>
+        <a href="#process">How It's Made</a>
+        <a href="reviews.html">Reviews</a>
+      </nav>
+
+      <nav class="footer-col">
+        <h4>Follow</h4>
+        <a href="https://www.instagram.com/studio_resinique?igsh=bW12Njgwdzg2NG5n&utm_source=qr" target="_blank" rel="noopener noreferrer">Instagram</a>
+        <a href="https://www.tiktok.com/@studio_resinique?_r=1&_t=ZS-972TvlXnA24" target="_blank" rel="noopener noreferrer">TikTok</a>
+        <a href="https://wa.me/923159185551?text=Hi%20Studio%20Resinique%2C%20I%27d%20like%20to%20ask%20about%20your%20resin%20jewelry" target="_blank" rel="noopener noreferrer">WhatsApp</a>
+      </nav>
+    </div>
+
+    <div class="container footer-bottom">
+      <p>&copy; 2026 Studio Resinique. Handmade with care.</p>
+      <div class="footer-legal">
+        <a href="#">Privacy</a>
+        <a href="#">Shipping &amp; Returns</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ===== Floating WhatsApp ===== -->
+  <a class="wa-float" href="https://wa.me/923159185551?text=Hi%20Studio%20Resinique%2C%20I%27d%20like%20to%20know%20more%20about%20your%20jewelry" target="_blank" rel="noopener noreferrer" aria-label="Chat with us on WhatsApp">
+    <svg viewBox="0 0 32 32" width="30" height="30" fill="currentColor" aria-hidden="true">
+      <path d="M16.04 4C9.93 4 5 8.93 5 15.04c0 2.05.56 3.96 1.53 5.6L5 27l6.53-1.5a11 11 0 0 0 4.5.96h.01C22.16 26.46 27 21.53 27 15.42 27 9.31 22.15 4 16.04 4zm6.43 15.56c-.27.76-1.58 1.46-2.18 1.5-.56.05-1.07.25-3.6-.75-3.03-1.2-4.95-4.28-5.1-4.48-.15-.2-1.22-1.62-1.22-3.1 0-1.48.77-2.2 1.05-2.5.27-.3.6-.38.8-.38l.57.01c.18.01.43-.07.67.52.27.64.92 2.22 1 2.38.08.16.13.35.02.55-.1.2-.16.33-.3.5-.16.18-.33.4-.47.54-.16.16-.32.33-.14.64.18.3.8 1.32 1.72 2.14 1.18 1.05 2.18 1.38 2.5 1.53.3.16.5.13.67-.08.18-.2.77-.9.98-1.2.2-.3.4-.25.67-.15.27.1 1.7.8 2 .95.3.15.5.22.56.34.07.12.07.7-.2 1.46z" />
+    </svg>
+  </a>
+
+  <!-- ===== Cart drawer ===== -->
+  <div class="cart-backdrop" id="cartBackdrop"></div>
+  <aside class="cart-drawer" id="cartDrawer" aria-hidden="true" aria-label="Your cart">
+    <div class="cart-head">
+      <h3>Your Cart</h3>
+      <button class="cart-close" id="cartClose" type="button" aria-label="Close cart">&times;</button>
+    </div>
+    <div class="cart-body" id="cartItems"></div>
+    <div class="cart-foot">
+      <div class="cart-subtotal">
+        <span>Subtotal</span>
+        <span id="cartTotal">Rs&nbsp;0</span>
+      </div>
+      <a class="btn cart-action" id="cartCheckoutBtn" href="checkout.html">Checkout</a>
+      <a class="btn btn-ghost cart-action" id="cartCheckout" href="#" target="_blank" rel="noopener noreferrer">Order via WhatsApp</a>
+      <p class="cart-note">Checkout online, or confirm the details with us on WhatsApp.</p>
+    </div>
+  </aside>
+
+  <!-- ===== Checkout modal ===== -->
+  <div class="checkout-backdrop" id="checkoutBackdrop"></div>
+  <div class="checkout-modal" id="checkoutModal" role="dialog" aria-modal="true" aria-labelledby="checkoutTitle" aria-hidden="true">
+    <button class="checkout-close" id="checkoutClose" type="button" aria-label="Close checkout">&times;</button>
+
+    <div class="checkout-main" id="checkoutMain">
+      <p class="eyebrow">Almost there</p>
+      <h3 id="checkoutTitle">Checkout</h3>
+
+      <div class="checkout-summary" id="checkoutSummary"></div>
+
+      <form class="checkout-form" id="checkoutForm" novalidate>
+        <div class="field-row">
+          <div class="field">
+            <label for="coName">Full name</label>
+            <input id="coName" name="name" type="text" autocomplete="name" required />
+          </div>
+          <div class="field">
+            <label for="coPhone">Phone</label>
+            <input id="coPhone" name="phone" type="tel" autocomplete="tel" placeholder="03XX XXXXXXX" required />
+          </div>
+        </div>
+        <div class="field-row">
+          <div class="field">
+            <label for="coCity">City</label>
+            <input id="coCity" name="city" type="text" autocomplete="address-level2" required />
+          </div>
+          <div class="field">
+            <label for="coEmail">Email <span class="field-opt">(optional)</span></label>
+            <input id="coEmail" name="email" type="email" autocomplete="email" />
+          </div>
+        </div>
+        <div class="field">
+          <label for="coAddress">Delivery address</label>
+          <textarea id="coAddress" name="address" rows="2" autocomplete="street-address" required></textarea>
+        </div>
+        <div class="field">
+          <label for="coNotes">Order notes <span class="field-opt">(optional)</span></label>
+          <textarea id="coNotes" name="notes" rows="2" placeholder="Custom colours, gift note, etc."></textarea>
+        </div>
+
+        <div class="field pay-section">
+          <p class="pay-label">Payment method</p>
+
+          <label class="pay-option">
+            <input type="radio" name="payment" value="Bank Transfer" checked />
+            <span class="pay-card">
+              <span class="pay-card-head">
+                <span class="pay-name">Bank Transfer</span>
+                <span class="pay-tick" aria-hidden="true">&#10003;</span>
+              </span>
+              <span class="pay-details">
+                <span>Account Title: <strong>Studio Resinique</strong></span>
+                <span>Bank: <strong>[Your Bank Name]</strong></span>
+                <span>Account No: <strong>0000 0000 0000</strong></span>
+                <span>IBAN: <strong>PK00 0000 0000 0000 0000 00</strong></span>
+              </span>
+            </span>
+          </label>
+
+          <label class="pay-option">
+            <input type="radio" name="payment" value="Easypaisa" />
+            <span class="pay-card">
+              <span class="pay-card-head">
+                <span class="pay-name">Easypaisa</span>
+                <span class="pay-tick" aria-hidden="true">&#10003;</span>
+              </span>
+              <span class="pay-details">
+                <span>Account Title: <strong>Studio Resinique</strong></span>
+                <span>Number: <strong>0334-5466335</strong></span>
+              </span>
+            </span>
+          </label>
+
+          <p class="pay-note">After sending the payment, please WhatsApp us the screenshot at <a href="https://wa.me/923159185551" target="_blank" rel="noopener noreferrer">+92&nbsp;315&nbsp;9185551</a> to confirm your order.</p>
+        </div>
+
+        <p class="checkout-error" id="checkoutError" role="alert"></p>
+        <button type="submit" class="btn checkout-submit">Place Order</button>
+      </form>
+    </div>
+
+    <div class="checkout-success" id="checkoutSuccess" hidden>
+      <div class="checkout-tick" aria-hidden="true">&#10003;</div>
+      <h3>Thank you, <span id="checkoutSuccessName">friend</span>!</h3>
+      <p>Your order has been received. We'll confirm the details with you shortly on WhatsApp.</p>
+      <button type="button" class="btn checkout-done" id="checkoutDone">Continue shopping</button>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
