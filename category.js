@@ -10,6 +10,16 @@
   const blurbEl = document.getElementById("catBlurb");
   const crumbEl = document.getElementById("catCrumb");
   const countEl = document.getElementById("catCount");
+  const descMetaEl = document.querySelector('meta[name="description"]');
+  const canonicalEl = document.getElementById("canonicalLink");
+  const ogTitleEl = document.getElementById("ogTitle");
+  const ogDescEl = document.getElementById("ogDescription");
+  const ogUrlEl = document.getElementById("ogUrl");
+  const ogImageEl = document.getElementById("ogImage");
+  const pageUrl = "https://studio-resinique.by-aimen.workers.dev/category.html" + (slug ? "?cat=" + encodeURIComponent(slug) : "");
+
+  if (canonicalEl) canonicalEl.href = pageUrl;
+  if (ogUrlEl) ogUrlEl.content = pageUrl;
 
   if (!data) {
     document.title = "Collection — Studio Resinique";
@@ -27,6 +37,12 @@
   if (titleEl) titleEl.textContent = data.title;
   if (blurbEl) blurbEl.textContent = data.blurb;
   if (crumbEl) crumbEl.textContent = data.title;
+  if (descMetaEl) descMetaEl.content = data.blurb;
+  if (ogTitleEl) ogTitleEl.content = data.title + " — Studio Resinique";
+  if (ogDescEl) ogDescEl.content = data.blurb;
+  if (ogImageEl && data.items[0]) {
+    ogImageEl.content = "https://studio-resinique.by-aimen.workers.dev/" + data.items[0].image;
+  }
   if (countEl) {
     countEl.textContent =
       data.items.length + (data.items.length === 1 ? " piece" : " pieces");
