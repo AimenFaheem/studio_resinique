@@ -1426,6 +1426,65 @@ section { padding: clamp(4rem, 8vw, 7rem) 0; }
 @media (max-width: 760px) { .ev-gallery { grid-template-columns: repeat(2, 1fr); } }
 @media (max-width: 420px) { .ev-gallery { gap: 0.6rem; } }
 
+/* ===== Blog ===== */
+.blog-list { padding: clamp(2.5rem, 5vw, 3.5rem) 0 clamp(4rem, 8vw, 7rem); }
+.blog-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2.2rem;
+}
+.blog-card {
+  display: flex;
+  flex-direction: column;
+  background: var(--ivory);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  overflow: hidden;
+  transition: box-shadow 0.3s var(--ease), transform 0.3s var(--ease);
+}
+.blog-card:hover { box-shadow: var(--shadow); transform: translateY(-4px); }
+.blog-card-media { position: relative; aspect-ratio: 4 / 3; overflow: hidden; }
+.blog-card-media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.7s var(--ease);
+}
+.blog-card:hover .blog-card-media img { transform: scale(1.07); }
+.blog-card-body { display: flex; flex-direction: column; gap: 0.7rem; padding: 1.6rem; }
+.blog-card-body .eyebrow { margin-bottom: 0; }
+.blog-card-body h3 { font-size: 1.5rem; line-height: 1.15; }
+.blog-card-body p { color: var(--ink-soft); font-size: 0.95rem; }
+.blog-card-body .link-arrow { margin-top: 0.3rem; }
+
+.blog-article { padding: clamp(2.5rem, 5vw, 3.5rem) 0 clamp(4rem, 8vw, 7rem); }
+.blog-article-inner { max-width: 700px; margin: 0 auto; }
+.blog-article-inner h2 {
+  font-size: clamp(1.5rem, 3vw, 1.9rem);
+  margin: 2.2rem 0 1rem;
+}
+.blog-article-inner h3 {
+  font-size: clamp(1.2rem, 2.4vw, 1.4rem);
+  margin: 1.6rem 0 0.8rem;
+}
+.blog-article-inner p { color: var(--ink-soft); margin-bottom: 1.2rem; }
+.blog-article-inner ul { list-style: disc; padding-left: 1.4rem; margin-bottom: 1.2rem; }
+.blog-article-inner li { color: var(--ink-soft); margin-bottom: 0.5rem; }
+.blog-article-inner strong { color: var(--ink); }
+.blog-article-cta {
+  margin-top: 2.5rem;
+  padding: 1.8rem;
+  background: var(--ivory);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  text-align: center;
+}
+.blog-article-cta p { margin-bottom: 1rem; }
+.blog-back { display: inline-block; margin-bottom: 2rem; }
+
+@media (max-width: 900px) { .blog-grid { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 560px) { .blog-grid { grid-template-columns: 1fr; max-width: 360px; margin: 0 auto; } }
+
 /* ===== Contact page ===== */
 .contact-page { padding: clamp(2.5rem, 5vw, 3.5rem) 0 clamp(4rem, 8vw, 7rem); }
 .contact-grid {
