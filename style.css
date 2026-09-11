@@ -1481,18 +1481,66 @@ section { padding: clamp(4rem, 8vw, 7rem) 0; }
 
 .blog-article { padding: clamp(2.5rem, 5vw, 3.5rem) 0 clamp(4rem, 8vw, 7rem); }
 .blog-article-inner { max-width: 700px; margin: 0 auto; }
+.blog-article-inner--guide { --card-accent: var(--blush-deep); }
+.blog-article-inner--process { --card-accent: var(--sage); }
+.blog-article-inner--care { --card-accent: var(--sky); }
+
 .blog-article-inner h2 {
   font-size: clamp(1.5rem, 3vw, 1.9rem);
-  margin: 2.2rem 0 1rem;
+  margin: 0;
 }
 .blog-article-inner h3 {
   font-size: clamp(1.2rem, 2.4vw, 1.4rem);
   margin: 1.6rem 0 0.8rem;
 }
 .blog-article-inner p { color: var(--ink-soft); margin-bottom: 1.2rem; }
-.blog-article-inner ul { list-style: disc; padding-left: 1.4rem; margin-bottom: 1.2rem; }
-.blog-article-inner li { color: var(--ink-soft); margin-bottom: 0.5rem; }
+.blog-article-inner .blog-lead {
+  font-size: 1.15rem;
+  color: var(--ink);
+}
+.blog-article-inner ul { list-style: none; padding-left: 0; margin-bottom: 1.2rem; }
+.blog-article-inner li {
+  position: relative;
+  padding-left: 1.6rem;
+  color: var(--ink-soft);
+  margin-bottom: 0.7rem;
+}
+.blog-article-inner li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0.55em;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--card-accent, var(--gold));
+}
 .blog-article-inner strong { color: var(--ink); }
+
+.blog-h2 {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  margin: 2.4rem 0 1.1rem;
+}
+.blog-h2-icon,
+.blog-step-num {
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: var(--card-accent, var(--gold));
+  color: var(--ink);
+}
+.blog-h2-icon svg { width: 19px; height: 19px; }
+.blog-step-num {
+  font-family: "Cormorant Garamond", serif;
+  font-weight: 600;
+  font-size: 1.2rem;
+}
 .blog-article-cta {
   margin-top: 2.5rem;
   padding: 1.8rem;
