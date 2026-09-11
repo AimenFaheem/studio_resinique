@@ -1434,25 +1434,47 @@ section { padding: clamp(4rem, 8vw, 7rem) 0; }
   gap: 2.2rem;
 }
 .blog-card {
+  position: relative;
   display: flex;
   flex-direction: column;
   background: var(--ivory);
   border: 1px solid var(--line);
   border-radius: var(--radius);
   overflow: hidden;
-  transition: box-shadow 0.3s var(--ease), transform 0.3s var(--ease);
+  padding: 2.2rem 1.8rem 1.8rem;
+  transition: box-shadow 0.3s var(--ease), transform 0.3s var(--ease), border-color 0.3s var(--ease);
 }
-.blog-card:hover { box-shadow: var(--shadow); transform: translateY(-4px); }
-.blog-card-media { position: relative; aspect-ratio: 4 / 3; overflow: hidden; }
-.blog-card-media img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  transition: transform 0.7s var(--ease);
+.blog-card::before {
+  content: "";
+  position: absolute;
+  inset: 0 0 auto 0;
+  height: 5px;
+  background: var(--card-accent, var(--gold));
 }
-.blog-card:hover .blog-card-media img { transform: scale(1.07); }
-.blog-card-body { display: flex; flex-direction: column; gap: 0.7rem; padding: 1.6rem; }
-.blog-card-body .eyebrow { margin-bottom: 0; }
+.blog-card:hover {
+  box-shadow: var(--shadow);
+  transform: translateY(-4px);
+  border-color: var(--card-accent, var(--gold));
+}
+.blog-card--guide { --card-accent: var(--blush-deep); }
+.blog-card--process { --card-accent: var(--sage); }
+.blog-card--care { --card-accent: var(--sky); }
+
+.blog-card-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 58px;
+  height: 58px;
+  border-radius: 50%;
+  background: var(--card-accent, var(--gold));
+  color: var(--ink);
+  margin-bottom: 1.3rem;
+}
+.blog-card-icon svg { width: 26px; height: 26px; }
+
+.blog-card-body { display: flex; flex-direction: column; gap: 0.7rem; }
+.blog-card-body .eyebrow { margin-bottom: 0; color: var(--ink-soft); }
 .blog-card-body h3 { font-size: 1.5rem; line-height: 1.15; }
 .blog-card-body p { color: var(--ink-soft); font-size: 0.95rem; }
 .blog-card-body .link-arrow { margin-top: 0.3rem; }
