@@ -7,13 +7,13 @@ const CATALOG = {
     blurb:
       "Hand-poured resin earrings — pressed petals, swirls of colour, and skin-friendly findings made to wear every day.",
     items: [
-      { name: "Daisy Heart Drops", image: "images/earrings-1.png", price: 1200, meta: "Drop Earrings" },
-      { name: "Meadow Heart Drops", image: "images/earrings-2.png", price: 1650, meta: "Drop Earrings", badge: "New" },
-      { name: "Sunlit Heart Danglers", image: "images/earrings-3.png", price: 1500, meta: "Danglers" },
-      { name: "Dainty Bloom Drops", image: "images/earrings-4.png", price: 1800, meta: "Drop Earrings" },
-      { name: "Rose Heart Drops", image: "images/product-1.jpeg", price: 1350, meta: "Drop Earrings" },
-      { name: "Marigold Halo Drops", image: "images/product-2.jpeg", price: 1100, meta: "Drop Earrings" },
-      { name: "Mini Flutter Earrings", image: "images/product-4.jpeg", price: 450, meta: "Stud Earrings" },
+      { name: "Daisy Heart Drops", image: "images/earrings-1.png", price: 1200, meta: "Earrings" },
+      { name: "Meadow Heart Drops", image: "images/earrings-2.png", price: 1650, meta: "Earrings", badge: "New" },
+      { name: "Sunlit Heart Danglers", image: "images/earrings-3.png", price: 1500, meta: "Earrings" },
+      { name: "Dainty Bloom Drops", image: "images/earrings-4.png", price: 1800, meta: "Earrings" },
+      { name: "Rose Heart Drops", image: "images/product-1.jpeg", price: 1350, meta: "Earrings" },
+      { name: "Marigold Halo Drops", image: "images/product-2.jpeg", price: 1100, meta: "Earrings" },
+      { name: "Mini Flutter Earrings", image: "images/product-4.jpeg", price: 450, meta: "Earrings" },
     ],
   },
   pendants: {
@@ -23,7 +23,7 @@ const CATALOG = {
     items: [
       { name: "Tide Pool Pendant", image: "images/product-6.jpeg", price: 1800, meta: "Pendant", badge: "Bestseller" },
       { name: "Goldleaf Pendant", image: "images/product-3.jpeg", price: 1500, meta: "Pendant" },
-      { name: "Meadow Locket", image: "images/product-1.jpeg", price: 1950, meta: "Locket" },
+      { name: "Meadow Locket", image: "images/product-1.jpeg", price: 1950, meta: "Pendant" },
       { name: "Petal & Gold Pendant", image: "images/product-8.jpeg", price: 1800, meta: "Pendant" },
       { name: "Dusk Halo Pendant", image: "images/product-7.jpeg", price: 2100, meta: "Pendant" },
       { name: "Rosewater Drop", image: "images/product-5.jpeg", price: 1600, meta: "Pendant" },
@@ -64,7 +64,7 @@ const CATALOG = {
       { name: "Meadow Bangle", image: "images/product-2.jpeg", price: 1850, meta: "Bangle" },
       { name: "Honey Glow Bangle", image: "images/product-4.jpeg", price: 1700, meta: "Bangle" },
       { name: "Celestia Bangle", image: "images/product-7.jpeg", price: 2200, meta: "Bangle" },
-      { name: "Petal Cuff", image: "images/product-8.jpeg", price: 1900, meta: "Cuff" },
+      { name: "Petal Cuff", image: "images/product-8.jpeg", price: 1900, meta: "Bangle" },
       { name: "Meadow Locket Bangle", image: "images/product-1.jpeg", price: 1950, meta: "Bangle" },
     ],
   },
@@ -99,12 +99,12 @@ const CATALOG = {
     blurb:
       "The little extras — hair clips, brooches, and trinkets, each poured and finished by hand.",
     items: [
-      { name: "Petal Hair Clip", image: "images/product-8.jpeg", price: 1100, meta: "Hair Clip" },
-      { name: "Honey Glow Brooch", image: "images/product-4.jpeg", price: 1250, meta: "Brooch" },
-      { name: "Goldleaf Pin", image: "images/product-3.jpeg", price: 1050, meta: "Pin" },
-      { name: "Rosewater Clip", image: "images/product-5.jpeg", price: 1150, meta: "Hair Clip", badge: "New" },
-      { name: "Aurora Trinket", image: "images/product-9.jpeg", price: 1300, meta: "Trinket" },
-      { name: "Celestia Brooch", image: "images/product-7.jpeg", price: 1400, meta: "Brooch" },
+      { name: "Petal Hair Clip", image: "images/product-8.jpeg", price: 1100, meta: "Accessory" },
+      { name: "Honey Glow Brooch", image: "images/product-4.jpeg", price: 1250, meta: "Accessory" },
+      { name: "Goldleaf Pin", image: "images/product-3.jpeg", price: 1050, meta: "Accessory" },
+      { name: "Rosewater Clip", image: "images/product-5.jpeg", price: 1150, meta: "Accessory", badge: "New" },
+      { name: "Aurora Trinket", image: "images/product-9.jpeg", price: 1300, meta: "Accessory" },
+      { name: "Celestia Brooch", image: "images/product-7.jpeg", price: 1400, meta: "Accessory" },
     ],
   },
 };
