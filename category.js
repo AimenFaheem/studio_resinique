@@ -16,7 +16,7 @@
   const ogDescEl = document.getElementById("ogDescription");
   const ogUrlEl = document.getElementById("ogUrl");
   const ogImageEl = document.getElementById("ogImage");
-  const pageUrl = "https://studio-resinique.by-aimen.workers.dev/category.html" + (slug ? "?cat=" + encodeURIComponent(slug) : "");
+  const pageUrl = "https://studioresinique.com/category.html" + (slug ? "?cat=" + encodeURIComponent(slug) : "");
 
   if (canonicalEl) canonicalEl.href = pageUrl;
   if (ogUrlEl) ogUrlEl.content = pageUrl;
@@ -41,7 +41,7 @@
   if (ogTitleEl) ogTitleEl.content = data.title + " — Studio Resinique";
   if (ogDescEl) ogDescEl.content = data.blurb;
   if (ogImageEl && data.items[0]) {
-    ogImageEl.content = "https://studio-resinique.by-aimen.workers.dev/" + data.items[0].image;
+    ogImageEl.content = "https://studioresinique.com/" + data.items[0].image;
   }
   if (countEl) {
     countEl.textContent =
