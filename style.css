@@ -2203,7 +2203,15 @@ section { padding: clamp(4rem, 8vw, 7rem) 0; }
   .nav a { font-size: 1.1rem; }
   .dropdown, .nav-caret { display: none; }
   .nav-toggle { display: flex; }
-  .header-actions .btn-ghost { display: none; }
+  .header-actions { gap: 0.6rem; }
+  .header-actions .btn { display: none; }
+  .logo-text { font-size: 1.5rem; }
+}
+
+@media (max-width: 400px) {
+  .header-inner { gap: 0.5rem; }
+  .logo-img { width: 36px; height: 36px; }
+  .logo-text { font-size: 1.3rem; }
 }
 
 @media (max-width: 520px) {
