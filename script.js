@@ -47,6 +47,16 @@ if (navToggle && nav) {
   });
 }
 
+// FAQ accordion — only one answer open at a time
+document.querySelectorAll(".faq-question").forEach((btn) => {
+  btn.addEventListener("click", () => {
+    const item = btn.closest(".faq-item");
+    const wasOpen = item.classList.contains("open");
+    document.querySelectorAll(".faq-item.open").forEach((el) => el.classList.remove("open"));
+    if (!wasOpen) item.classList.add("open");
+  });
+});
+
 // Wishlist heart toggle
 document.querySelectorAll(".wishlist").forEach((btn) => {
   btn.addEventListener("click", (e) => {
