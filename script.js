@@ -3,21 +3,44 @@
 // Mobile nav toggle
 const navToggle = document.getElementById("navToggle");
 const nav = document.getElementById("nav");
+const isMobileNav = () => window.matchMedia("(max-width: 720px)").matches;
 
 if (navToggle && nav) {
+  const closeNav = () => {
+    nav.classList.remove("open");
+    navToggle.classList.remove("open");
+    navToggle.setAttribute("aria-expanded", "false");
+    const categoriesItem = nav.querySelector(".nav-item.has-dropdown");
+    if (categoriesItem) categoriesItem.classList.remove("open");
+  };
+
   navToggle.addEventListener("click", () => {
     const open = nav.classList.toggle("open");
     navToggle.classList.toggle("open", open);
     navToggle.setAttribute("aria-expanded", String(open));
+    if (!open) {
+      const categoriesItem = nav.querySelector(".nav-item.has-dropdown");
+      if (categoriesItem) categoriesItem.classList.remove("open");
+    }
   });
 
-  // Close the menu after tapping a link
-  nav.querySelectorAll("a").forEach((link) => {
-    link.addEventListener("click", () => {
-      nav.classList.remove("open");
-      navToggle.classList.remove("open");
-      navToggle.setAttribute("aria-expanded", "false");
+  // On mobile, "Categories" expands an inline accordion instead of navigating.
+  // On desktop it behaves as a normal link (the dropdown already opens on hover).
+  const categoriesTrigger = nav.querySelector(".nav-link--drop");
+  const categoriesItem = nav.querySelector(".nav-item.has-dropdown");
+  if (categoriesTrigger && categoriesItem) {
+    categoriesTrigger.addEventListener("click", (e) => {
+      if (isMobileNav()) {
+        e.preventDefault();
+        categoriesItem.classList.toggle("open");
+      }
     });
+  }
+
+  // Close the whole menu after tapping any real navigation link
+  nav.querySelectorAll("a").forEach((link) => {
+    if (link === categoriesTrigger) return;
+    link.addEventListener("click", closeNav);
   });
 }
 
@@ -57,6 +80,8 @@ async function saveOrderToSheet(payload) {
 
 const cartBtn = document.getElementById("cartBtn");
 const cartCount = document.getElementById("cartCount");
+const navCartBtn = document.getElementById("navCartBtn");
+const navCartCount = document.getElementById("navCartCount");
 const cartDrawer = document.getElementById("cartDrawer");
 const cartBackdrop = document.getElementById("cartBackdrop");
 const cartClose = document.getElementById("cartClose");
@@ -111,6 +136,10 @@ const renderCart = () => {
 
   cartCount.textContent = qty;
   cartCount.hidden = qty === 0;
+  if (navCartCount) {
+    navCartCount.textContent = qty;
+    navCartCount.hidden = qty === 0;
+  }
 
   if (!cart.length) {
     cartDrawer.classList.add("empty");
@@ -201,6 +230,16 @@ if (cartItemsEl) {
 if (cartBtn) cartBtn.addEventListener("click", openCart);
 if (cartClose) cartClose.addEventListener("click", closeCart);
 if (cartBackdrop) cartBackdrop.addEventListener("click", closeCart);
+if (navCartBtn) {
+  navCartBtn.addEventListener("click", () => {
+    if (nav && navToggle) {
+      nav.classList.remove("open");
+      navToggle.classList.remove("open");
+      navToggle.setAttribute("aria-expanded", "false");
+    }
+    openCart();
+  });
+}
 
 renderCart();
 
