@@ -1615,14 +1615,13 @@ section { padding: clamp(4rem, 8vw, 7rem) 0; }
   flex-shrink: 0;
   display: grid;
   place-items: center;
-  width: 30px; height: 30px;
+  width: 34px; height: 34px;
   border-radius: 50%;
   background: var(--blush);
   color: var(--ink);
-  font-size: 1.1rem;
-  line-height: 1;
   transition: transform 0.3s var(--ease), background 0.3s var(--ease), color 0.3s var(--ease);
 }
+.faq-icon svg { width: 16px; height: 16px; }
 .faq-item.open .faq-icon {
   transform: rotate(45deg);
   background: var(--ink);
