@@ -20,10 +20,22 @@
  *
  * To change the code later, edit it then Deploy ▸ Manage deployments ▸
  * (pencil) ▸ Version: New version ▸ Deploy. The URL stays the same.
+ *
+ * ---------- EMAIL NOTIFICATIONS ----------
+ * Every new order also emails NOTIFY_EMAIL below. Sending mail is a
+ * new permission this script didn't need before, so the NEXT deploy
+ * will re-prompt you to authorise it ("This app isn't verified" is
+ * normal for a script you wrote yourself — click Advanced ▸ Go to
+ * [project name] to proceed). To change the notification address
+ * later, just edit NOTIFY_EMAIL and deploy a new version.
  * =================================================================
  */
 
 var SHEET_NAME = "Orders";
+
+// Where new-order notification emails go. Swap this when the new
+// business email is ready — nothing else needs to change.
+var NOTIFY_EMAIL = "aimen.faheem63@gmail.com";
 
 function doPost(e) {
   try {
@@ -64,6 +76,13 @@ function doPost(e) {
       .build();
     sheet.getRange(newRow, STATUS_COL).setDataValidation(rule);
 
+    // Notify by email — wrapped so a mail failure never breaks the order.
+    try {
+      sendOrderNotificationEmail(data);
+    } catch (mailErr) {
+      console.error("Order email notification failed: " + mailErr);
+    }
+
     return ContentService
       .createTextOutput(JSON.stringify({ result: "success" }))
       .setMimeType(ContentService.MimeType.JSON);
@@ -72,6 +91,25 @@ function doPost(e) {
       .createTextOutput(JSON.stringify({ result: "error", error: String(err) }))
       .setMimeType(ContentService.MimeType.JSON);
   }
+}
+
+function sendOrderNotificationEmail(data) {
+  var subject = "New order: " + (data.name || "Unknown") + " — Rs " + (data.total || 0);
+
+  var body =
+    "You've got a new order on Studio Resinique!\n\n" +
+    "Name: " + (data.name || "-") + "\n" +
+    "Phone: " + (data.phone || "-") + "\n" +
+    "Email: " + (data.email || "-") + "\n" +
+    "City: " + (data.city || "-") + "\n" +
+    "Address: " + (data.address || "-") + "\n" +
+    "Payment method: " + (data.payment || "-") + "\n" +
+    (data.notes ? "Notes: " + data.notes + "\n" : "") +
+    "\nItems:\n" + (data.items || "-") + "\n" +
+    "\nTotal: Rs " + (data.total || 0) + "\n" +
+    "\n— Full details are in the Orders sheet.";
+
+  MailApp.sendEmail(NOTIFY_EMAIL, subject, body);
 }
 
 // Lets you open the web app URL in a browser to confirm it's live.
