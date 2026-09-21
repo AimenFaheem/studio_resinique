@@ -1465,6 +1465,10 @@ section { padding: clamp(4rem, 8vw, 7rem) 0; }
 .blog-card--process { --card-accent: var(--sage); }
 .blog-card--care { --card-accent: var(--sky); }
 .blog-card--gift { --card-accent: var(--honey); }
+.blog-card--birth { --card-accent: var(--lilac); }
+.blog-card--monsoon { --card-accent: var(--sky); }
+.blog-card--jhumka { --card-accent: var(--gold); }
+.blog-card--compare { --card-accent: var(--blush); }
 
 .blog-card-icon {
   display: flex;
@@ -1491,6 +1495,10 @@ section { padding: clamp(4rem, 8vw, 7rem) 0; }
 .blog-article-inner--process { --card-accent: var(--sage); }
 .blog-article-inner--care { --card-accent: var(--sky); }
 .blog-article-inner--gift { --card-accent: var(--honey); }
+.blog-article-inner--birth { --card-accent: var(--lilac); }
+.blog-article-inner--monsoon { --card-accent: var(--sky); }
+.blog-article-inner--jhumka { --card-accent: var(--gold); }
+.blog-article-inner--compare { --card-accent: var(--blush); }
 
 .blog-article-inner h2 {
   font-size: clamp(1.5rem, 3vw, 1.9rem);
