@@ -8,7 +8,7 @@ const CATALOG = {
       "Hand-poured resin earrings — pressed petals, swirls of colour, and skin-friendly findings made to wear every day.",
     items: [
       { name: "Daisy Heart Drops", image: "images/earrings-1.png", price: 1200, meta: "Earrings" },
-      { name: "Meadow Heart Drops", image: "images/earrings-2.png", price: 1650, meta: "Earrings", badge: "New" },
+      { name: "Meadow Hearts", image: "images/earrings-2.png", price: 1650, meta: "Earrings", badge: "New" },
       { name: "Sunlit Heart Danglers", image: "images/earrings-3.png", price: 1500, meta: "Earrings" },
       { name: "Dainty Bloom Drops", image: "images/earrings-4.png", price: 1800, meta: "Earrings" },
       { name: "Rose Heart Drops", image: "images/product-1.jpeg", price: 1350, meta: "Earrings" },
