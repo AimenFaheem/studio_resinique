@@ -332,7 +332,7 @@ ul, ol { list-style: none; }
   gap: 3rem;
 }
 .hero h1 {
-  font-size: clamp(2.2rem, 4vw, 3.2rem);
+  font-size: clamp(38px, 4.2vw, 56px);
   margin-bottom: 1.4rem;
 }
 .lede {
@@ -2215,11 +2215,11 @@ section { padding: clamp(4rem, 8vw, 7rem) 0; }
 }
 
 @media (max-width: 600px) {
-  .hero h1 { font-size: clamp(1.6rem, 7.5vw, 2.2rem); }
+  .hero h1 { font-size: clamp(28px, 7.5vw, 38px); }
 }
 
 @media (max-width: 400px) {
-  .hero h1 { font-size: clamp(1.35rem, 7.5vw, 1.8rem); }
+  .hero h1 { font-size: clamp(24px, 7.5vw, 31px); }
 }
 
 @media (max-width: 520px) {
