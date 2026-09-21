@@ -87,9 +87,9 @@ const CATALOG = {
     blurb:
       "Everyday-sized jhumkas — the same resin blooms and silver bells, scaled down for daily wear.",
     items: [
-      { name: "Mini Ruby Bloom Jhumka", image: "images/mini-1.png", price: 1250, meta: "Mini Jhumka" },
       { name: "Mini Daisy Bloom Jhumka", image: "images/mini-2.png", price: 1250, meta: "Mini Jhumka" },
       { name: "Mini Sky Daisy Jhumka", image: "images/mini-3.jpeg", price: 1250, meta: "Mini Jhumka" },
+      { name: "Mini Ruby Bloom Jhumka", image: "images/mini-1.png", price: 1500, meta: "Mini Jhumka" },
       { name: "Mini Blossom Jhumka", image: "images/mini-4.png", price: 1250, meta: "Mini Jhumka", badge: "New" },
       { name: "Mini Garnet Jhumka", image: "images/mini-5.png", price: 1250, meta: "Mini Jhumka" },
     ],
