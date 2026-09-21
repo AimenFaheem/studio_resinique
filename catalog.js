@@ -79,6 +79,7 @@ const CATALOG = {
       { name: "Tide Pool Jhumka", image: "images/jhumka-4.jpeg", price: 2500, meta: "Jhumka" },
       { name: "Goldleaf Jhumka", image: "images/jhumka-5.png", price: 2500, meta: "Jhumka" },
       { name: "Petal Jhumka", image: "images/jhumka-6.png", price: 2500, meta: "Jhumka" },
+      { name: "Midnight Rose Jhumka", image: "images/jhumka-7.png", price: 2500, meta: "Jhumka" },
     ],
   },
   "mini-jhumka": {
