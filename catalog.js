@@ -73,12 +73,12 @@ const CATALOG = {
     blurb:
       "Resin jhumkas with traditional silver bells and a modern floral twist — festive and feather-light.",
     items: [
-      { name: "Meadow Jhumka", image: "images/jhumka-1.png", price: 2200, meta: "Jhumka" },
-      { name: "Celestia Jhumka", image: "images/jhumka-2.png", price: 2400, meta: "Jhumka", badge: "Bestseller" },
-      { name: "Aurora Jhumka", image: "images/jhumka-3.png", price: 2300, meta: "Jhumka" },
-      { name: "Tide Pool Jhumka", image: "images/jhumka-4.jpeg", price: 2150, meta: "Jhumka" },
-      { name: "Goldleaf Jhumka", image: "images/jhumka-5.png", price: 2250, meta: "Jhumka" },
-      { name: "Petal Jhumka", image: "images/jhumka-6.png", price: 2000, meta: "Jhumka" },
+      { name: "Meadow Jhumka", image: "images/jhumka-1.png", price: 2500, meta: "Jhumka" },
+      { name: "Celestia Jhumka", image: "images/jhumka-2.png", price: 2500, meta: "Jhumka", badge: "Bestseller" },
+      { name: "Aurora Jhumka", image: "images/jhumka-3.png", price: 2500, meta: "Jhumka" },
+      { name: "Tide Pool Jhumka", image: "images/jhumka-4.jpeg", price: 2500, meta: "Jhumka" },
+      { name: "Goldleaf Jhumka", image: "images/jhumka-5.png", price: 2500, meta: "Jhumka" },
+      { name: "Petal Jhumka", image: "images/jhumka-6.png", price: 2500, meta: "Jhumka" },
     ],
   },
   "mini-jhumka": {
