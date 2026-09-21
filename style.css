@@ -2203,6 +2203,7 @@ section { padding: clamp(4rem, 8vw, 7rem) 0; }
     transition: transform 0.4s var(--ease);
     left: auto;
     padding-bottom: 2rem;
+    z-index: 130;
   }
   .nav.open { transform: translateX(0); }
 
