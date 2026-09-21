@@ -12,7 +12,7 @@ const EVENTS = [
     description:
       "Our biggest stall yet — three days of handmade joy, live resin pours, and finally meeting so many of you in person.",
     media: [
-      { type: "image", src: "images/product-7.jpeg" },
+      { type: "image", src: "images/jhumka-5.png" },
       { type: "image", src: "images/product-6.jpeg" },
       // Replace the embed URL with your real YouTube video link
       { type: "video", src: "https://www.youtube.com/embed/aqz-KE-bpKQ", thumb: "images/product-9.jpeg" },
@@ -40,7 +40,7 @@ const EVENTS = [
     description:
       "A cosy corner by the sea breeze — new drops, a little giveaway, and lots of happy faces.",
     media: [
-      { type: "image", src: "images/product-3.jpeg" },
+      { type: "image", src: "images/jhumka-4.jpeg" },
       { type: "video", src: "https://www.youtube.com/embed/aqz-KE-bpKQ", thumb: "images/product-8.jpeg" },
       { type: "image", src: "images/product-5.jpeg" },
     ],
@@ -55,7 +55,7 @@ const EVENTS = [
     media: [
       { type: "image", src: "images/product-9.jpeg" },
       { type: "image", src: "images/product-2.jpeg" },
-      { type: "image", src: "images/product-7.jpeg" },
+      { type: "image", src: "images/jhumka-5.png" },
     ],
   },
   {
