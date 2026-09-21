@@ -9,11 +9,11 @@ const CATALOG = {
     items: [
       { name: "Daisy Heart Drops", image: "images/earrings-1.png", price: 1200, meta: "Earrings" },
       { name: "Meadow Hearts", image: "images/earrings-2.png", price: 1650, meta: "Earrings", badge: "New" },
-      { name: "Sunlit Heart Danglers", image: "images/earrings-3.png", price: 1500, meta: "Earrings" },
-      { name: "Dainty Bloom Drops", image: "images/earrings-4.png", price: 1800, meta: "Earrings" },
+      { name: "Sunlit Danglers", image: "images/earrings-3.png", price: 1500, meta: "Earrings" },
+      { name: "Dainty Drops", image: "images/earrings-4.png", price: 1800, meta: "Earrings" },
       { name: "Rose Heart Drops", image: "images/product-1.jpeg", price: 1350, meta: "Earrings" },
-      { name: "Marigold Halo Drops", image: "images/product-2.jpeg", price: 1100, meta: "Earrings" },
-      { name: "Mini Flutter Earrings", image: "images/product-4.jpeg", price: 450, meta: "Earrings" },
+      { name: "Marigold Drops", image: "images/product-2.jpeg", price: 1100, meta: "Earrings" },
+      { name: "Flutter Studs", image: "images/product-4.jpeg", price: 450, meta: "Earrings" },
     ],
   },
   pendants: {
