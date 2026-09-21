@@ -2208,15 +2208,30 @@ section { padding: clamp(4rem, 8vw, 7rem) 0; }
   .nav-mobile-logo {
     display: flex;
     align-items: center;
+    justify-content: space-between;
     gap: 0.7rem;
     padding: 1.5rem 1.4rem 1.2rem;
     border-bottom: 1px solid var(--line);
   }
+  .nav-mobile-logo-brand { display: flex; align-items: center; gap: 0.7rem; }
   .nav-mobile-logo img { width: 40px; height: 40px; border-radius: 50%; object-fit: cover; flex-shrink: 0; }
   .nav-mobile-logo span {
     font-family: "Dancing Script", "Cormorant Garamond", cursive;
     font-size: 1.5rem;
     font-weight: 700;
+  }
+  .nav-close {
+    display: grid;
+    place-items: center;
+    width: 38px; height: 38px;
+    flex-shrink: 0;
+    border: 1px solid var(--line);
+    background: var(--ivory);
+    border-radius: 50%;
+    font-size: 1.4rem;
+    line-height: 1;
+    color: var(--ink);
+    cursor: pointer;
   }
 
   .nav > a,

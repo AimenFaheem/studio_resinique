@@ -24,6 +24,9 @@ if (navToggle && nav) {
     }
   });
 
+  const navClose = document.getElementById("navClose");
+  if (navClose) navClose.addEventListener("click", closeNav);
+
   // On mobile, "Categories" expands an inline accordion instead of navigating.
   // On desktop it behaves as a normal link (the dropdown already opens on hover).
   const categoriesTrigger = nav.querySelector(".nav-link--drop");
