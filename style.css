@@ -2338,7 +2338,7 @@ section { padding: clamp(4rem, 8vw, 7rem) 0; }
 
 @media (max-width: 520px) {
   .category-grid { grid-template-columns: repeat(2, 1fr); gap: 1rem; }
-  .product-grid { grid-template-columns: 1fr; max-width: 360px; margin: 0 auto; }
+  .product-grid { grid-template-columns: repeat(2, 1fr); gap: 1rem; }
   .steps { grid-template-columns: 1fr; }
   .events-grid { grid-template-columns: 1fr; grid-auto-rows: clamp(190px, 60vw, 240px); }
   .event-feature { grid-column: span 1; grid-row: span 1; }
