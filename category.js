@@ -63,7 +63,7 @@
           <h3>${it.name}</h3>
           <p class="product-meta">${it.meta}</p>
           <p class="product-price">${fmt(it.price)}</p>
-          <button class="add-cart" type="button">Order Now</button>
+          <button class="add-cart" type="button">Add to Cart</button>
         </div>
       </article>`
     )
