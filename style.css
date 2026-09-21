@@ -2255,6 +2255,14 @@ section { padding: clamp(4rem, 8vw, 7rem) 0; }
     max-height: 700px;
     padding: 1rem 1.4rem 1.4rem;
   }
+  /* Neutralize the desktop hover/focus-within dropdown transform — a
+     tapped link on mobile can trigger :focus-within, which otherwise
+     wins on specificity over the plain mobile .dropdown rule above
+     and shifts the accordion sideways by half its own width. */
+  .has-dropdown:hover .dropdown,
+  .has-dropdown:focus-within .dropdown {
+    transform: none;
+  }
   .dropdown-grid { grid-template-columns: 1fr; gap: 0.3rem; }
   .dropdown-link { padding: 0.55rem 0.4rem; }
   .dropdown-thumb { width: 42px; height: 42px; }
