@@ -2214,6 +2214,10 @@ section { padding: clamp(4rem, 8vw, 7rem) 0; }
   .logo-text { font-size: 1.3rem; }
 }
 
+@media (max-width: 600px) {
+  .hero h1 { font-size: clamp(1.9rem, 8.5vw, 2.6rem); }
+}
+
 @media (max-width: 520px) {
   .category-grid { grid-template-columns: 1fr; max-width: 360px; margin: 0 auto; gap: 1.2rem; }
   .product-grid { grid-template-columns: 1fr; max-width: 360px; margin: 0 auto; }
