@@ -112,6 +112,13 @@ function sendOrderNotificationEmail(data) {
   MailApp.sendEmail(NOTIFY_EMAIL, subject, body);
 }
 
+// Run this once manually from the editor (select it in the function
+// dropdown above, then click Run) to force the email-permission
+// authorization prompt and confirm mail actually sends.
+function testEmail() {
+  MailApp.sendEmail(NOTIFY_EMAIL, "Test email from Studio Resinique script", "If you got this, order email notifications are working.");
+}
+
 // Lets you open the web app URL in a browser to confirm it's live.
 function doGet() {
   return ContentService
