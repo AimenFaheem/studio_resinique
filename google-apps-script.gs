@@ -46,12 +46,19 @@ function doPost(e) {
     if (sheet.getLastRow() === 0) {
       sheet.appendRow([
         "Ordered At", "Name", "Phone", "City", "Email",
-        "Address", "Notes", "Payment", "Status", "Items", "Total (Rs)"
+        "Address", "Notes", "Items", "Total (Rs)", "Payment Status"
       ]);
       sheet.setFrozenRows(1);
     }
 
     var data = JSON.parse(e.postData.contents);
+
+    // Payment method (Bank Transfer / Easypaisa) is folded into Notes
+    // so that information isn't lost now that there's no separate column for it.
+    var notesWithPayment =
+      (data.payment ? "Payment method: " + data.payment : "") +
+      (data.payment && data.notes ? " | " : "") +
+      (data.notes || "");
 
     sheet.appendRow([
       data.orderedAt ? new Date(data.orderedAt) : new Date(),
@@ -60,15 +67,14 @@ function doPost(e) {
       data.city || "",
       data.email || "",
       data.address || "",
-      data.notes || "",
-      data.payment || "",
-      "Unpaid",                 // every new order starts as Unpaid
+      notesWithPayment,
       data.items || "",
-      data.total || 0
+      data.total || 0,
+      "Unpaid"                  // every new order starts as Unpaid
     ]);
 
-    // Add a Paid / Unpaid dropdown on the Status cell of this new row.
-    var STATUS_COL = 9; // 9th column = "Status"
+    // Add a Paid / Unpaid dropdown on the Payment Status cell of this new row.
+    var STATUS_COL = 10; // 10th column = "Payment Status"
     var newRow = sheet.getLastRow();
     var rule = SpreadsheetApp.newDataValidation()
       .requireValueInList(["Unpaid", "Paid"], true)
