@@ -21,12 +21,11 @@ const CATALOG = {
     blurb:
       "Little wearable worlds — flowers and pigment set in glassy resin, hung on tarnish-resistant chains.",
     items: [
-      { name: "Tide Pool Pendant", image: "images/product-6.jpeg", price: 1800, meta: "Pendant", badge: "Bestseller" },
-      { name: "Goldleaf Pendant", image: "images/jhumka-4.jpeg", price: 1500, meta: "Pendant" },
-      { name: "Meadow Locket", image: "images/product-1.jpeg", price: 1950, meta: "Pendant" },
-      { name: "Petal & Gold Pendant", image: "images/product-8.jpeg", price: 1800, meta: "Pendant" },
-      { name: "Dusk Halo Pendant", image: "images/jhumka-5.png", price: 2100, meta: "Pendant" },
-      { name: "Rosewater Drop", image: "images/product-5.jpeg", price: 1600, meta: "Pendant" },
+      { name: "Ruby Gold Pendant", image: "images/pendant-1.png", price: 1000, meta: "Pendant with stainless steel chain", badge: "Bestseller" },
+      { name: "Sage Blossom Pendant", image: "images/pendant-2.png", price: 1000, meta: "Pendant with stainless steel chain" },
+      { name: "Magenta Blossom Pendant", image: "images/pendant-3.png", price: 1000, meta: "Pendant with stainless steel chain" },
+      { name: "Violet Ring Pendant", image: "images/pendant-4.png", price: 1000, meta: "Pendant with stainless steel chain" },
+      { name: "Golden Daisy Pendant", image: "images/pendant-5.png", price: 1000, meta: "Pendant with stainless steel chain" },
     ],
   },
   rings: {
