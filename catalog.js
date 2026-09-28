@@ -33,12 +33,10 @@ const CATALOG = {
     blurb:
       "Adjustable resin rings with pearl flecks, petals, and pigment — one-of-a-kind little statements.",
     items: [
-      { name: "Lilac Haze Ring", image: "images/product-2.jpeg", price: 900, meta: "Ring" },
-      { name: "Petal & Gold Ring", image: "images/product-8.jpeg", price: 1100, meta: "Ring" },
-      { name: "Rosewater Ring", image: "images/product-5.jpeg", price: 1000, meta: "Ring" },
-      { name: "Aurora Ring", image: "images/product-9.jpeg", price: 1250, meta: "Ring", badge: "New" },
-      { name: "Meadow Ring", image: "images/product-1.jpeg", price: 1050, meta: "Ring" },
-      { name: "Honey Glow Ring", image: "images/product-4.jpeg", price: 980, meta: "Ring" },
+      { name: "Wildflower Gold Ring", image: "images/ring-1.jpeg", price: 480, meta: "Ring" },
+      { name: "Garden Leaf Ring", image: "images/ring-2.jpeg", price: 480, meta: "Ring" },
+      { name: "Baby's Breath Ring", image: "images/ring-3.jpeg", price: 480, meta: "Ring" },
+      { name: "Midnight Rose Ring", image: "images/ring-4.jpeg", price: 480, meta: "Ring" },
     ],
   },
   keychains: {
