@@ -21,11 +21,11 @@ const CATALOG = {
     blurb:
       "Little wearable worlds — flowers and pigment set in glassy resin, hung on tarnish-resistant chains.",
     items: [
-      { name: "Ruby Gold Pendant", image: "images/pendant-1.png", price: 1000, meta: "Pendant with stainless steel chain", badge: "Bestseller" },
-      { name: "Sage Blossom Pendant", image: "images/pendant-2.png", price: 1000, meta: "Pendant with stainless steel chain" },
-      { name: "Magenta Blossom Pendant", image: "images/pendant-3.png", price: 1000, meta: "Pendant with stainless steel chain" },
-      { name: "Violet Ring Pendant", image: "images/pendant-4.png", price: 1000, meta: "Pendant with stainless steel chain" },
-      { name: "Golden Daisy Pendant", image: "images/pendant-5.png", price: 1000, meta: "Pendant with stainless steel chain" },
+      { name: "Ruby Gold Pendant", image: "images/pendant-1.png", price: 1000, meta: "Stainless steel chain", badge: "Bestseller" },
+      { name: "Sage Blossom Pendant", image: "images/pendant-2.png", price: 1000, meta: "Stainless steel chain" },
+      { name: "Magenta Blossom Pendant", image: "images/pendant-3.png", price: 1000, meta: "Stainless steel chain" },
+      { name: "Violet Ring Pendant", image: "images/pendant-4.png", price: 1000, meta: "Stainless steel chain" },
+      { name: "Golden Daisy Pendant", image: "images/pendant-5.png", price: 1000, meta: "Stainless steel chain" },
     ],
   },
   rings: {
