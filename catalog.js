@@ -80,6 +80,9 @@ const CATALOG = {
       { name: "Goldleaf Jhumka", image: "images/jhumka-5.png", price: 2500, meta: "Jhumka" },
       { name: "Petal Jhumka", image: "images/jhumka-6.png", price: 2500, meta: "Jhumka" },
       { name: "Midnight Rose Jhumka", image: "images/jhumka-7.png", price: 2500, meta: "Jhumka" },
+      { name: "Sunny Daisy Jhumka", image: "images/Jhumka-8.jpeg", price: 2500, meta: "Jhumka" },
+      { name: "Mosaic Bloom Jhumka", image: "images/Jhumka-9.jpeg", price: 2500, meta: "Jhumka" },
+      { name: "Blush Daisy Jhumka", image: "images/jhumka-10.jpeg", price: 2500, meta: "Jhumka" },
     ],
   },
   "mini-jhumka": {
