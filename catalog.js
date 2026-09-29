@@ -55,12 +55,7 @@ const CATALOG = {
     blurb:
       "Carry a little colour everywhere — sturdy resin keychains with florals, glitter, and gold accents.",
     items: [
-      { name: "Blush Initial Keychain", image: "images/keychain.png", price: 850, meta: "Keychain" },
-      { name: "Meadow Keychain", image: "images/product-1.jpeg", price: 950, meta: "Keychain" },
-      { name: "Rosewater Charm", image: "images/product-5.jpeg", price: 800, meta: "Keychain" },
-      { name: "Goldleaf Keychain", image: "images/jhumka-4.jpeg", price: 900, meta: "Keychain" },
-      { name: "Tide Pool Charm", image: "images/product-6.jpeg", price: 880, meta: "Keychain", badge: "New" },
-      { name: "Petal Keychain", image: "images/product-2.jpeg", price: 820, meta: "Keychain" },
+      { name: "Blush Initial Keychain", image: "images/keychain.png", price: 500, meta: "Keychain" },
     ],
   },
   bangles: {
