@@ -21,6 +21,10 @@ const CATALOG = {
       { name: "Blue Daisy Heart Drops", image: "images/earring-12.jpeg", price: 850, meta: "Earrings" },
       { name: "Midnight Lace Heart Drops", image: "images/earring-13.jpeg", price: 850, meta: "Earrings" },
       { name: "Olive Daisy Heart Drops", image: "images/earring-14.jpeg", price: 850, meta: "Earrings" },
+      { name: "Blush Petal Teardrop Drops", image: "images/earring-15.jpeg", price: 550, meta: "Earrings" },
+      { name: "Forget-Me-Not Teardrop Drops", image: "images/earring-16.jpeg", price: 550, meta: "Earrings" },
+      { name: "Rosy Round Drops", image: "images/earring-17.jpeg", price: 550, meta: "Earrings" },
+      { name: "Emerald Round Drops", image: "images/earring-18.jpeg", price: 550, meta: "Earrings" },
     ],
   },
   pendants: {
