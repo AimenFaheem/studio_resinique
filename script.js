@@ -192,6 +192,19 @@ const addToCart = (item) => {
   renderCart();
 };
 
+// Quantity-tier pills (e.g. Bangles: 1 / 2 / 4 pack pricing)
+document.querySelectorAll(".product-tiers").forEach((group) => {
+  const priceEl = group.closest(".product-info")?.querySelector(".product-price");
+  group.querySelectorAll(".tier-btn").forEach((tierBtn) => {
+    tierBtn.addEventListener("click", (e) => {
+      e.stopPropagation();
+      group.querySelectorAll(".tier-btn").forEach((b) => b.classList.remove("active"));
+      tierBtn.classList.add("active");
+      if (priceEl) priceEl.textContent = "Rs " + Number(tierBtn.dataset.price).toLocaleString("en-US");
+    });
+  });
+});
+
 // "Order Now" buttons → read the product's name, image, price and store it
 document.querySelectorAll(".add-cart").forEach((btn) => {
   const original = btn.textContent;
@@ -200,7 +213,10 @@ document.querySelectorAll(".add-cart").forEach((btn) => {
     const card = btn.closest(".product");
     if (!card) return;
 
-    const name = card.querySelector("h3")?.textContent.trim() || "Item";
+    const activeTier = card.querySelector(".tier-btn.active");
+    const name =
+      (card.querySelector("h3")?.textContent.trim() || "Item") +
+      (activeTier ? ` (${activeTier.dataset.label})` : "");
     const image = card.querySelector("img")?.getAttribute("src") || "";
     const priceText = card.querySelector(".product-price")?.textContent || "0";
     const price = parseInt(priceText.replace(/[^\d]/g, ""), 10) || 0;

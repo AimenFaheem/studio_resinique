@@ -63,6 +63,18 @@
           <h3>${it.name}</h3>
           <p class="product-meta">${it.meta}</p>
           <p class="product-price">${fmt(it.price)}</p>
+          ${
+            it.tiers
+              ? `<div class="product-tiers" role="group" aria-label="Choose quantity">
+                  ${it.tiers
+                    .map(
+                      (t, i) =>
+                        `<button type="button" class="tier-btn${i === 0 ? " active" : ""}" data-price="${t.price}" data-label="${t.label}">${t.label}</button>`
+                    )
+                    .join("")}
+                </div>`
+              : ""
+          }
           <button class="add-cart" type="button">Add to Cart</button>
         </div>
       </article>`

@@ -57,12 +57,18 @@ const CATALOG = {
     blurb:
       "Statement resin bangles — blossoms and gold leaf suspended in glossy, durable resin.",
     items: [
-      { name: "Rosewater Bangle", image: "images/product-5.jpeg", price: 1750, meta: "Bangle", badge: "New" },
-      { name: "Meadow Bangle", image: "images/product-2.jpeg", price: 1850, meta: "Bangle" },
-      { name: "Honey Glow Bangle", image: "images/product-4.jpeg", price: 1700, meta: "Bangle" },
-      { name: "Celestia Bangle", image: "images/jhumka-5.png", price: 2200, meta: "Bangle" },
-      { name: "Petal Cuff", image: "images/product-8.jpeg", price: 1900, meta: "Bangle" },
-      { name: "Meadow Locket Bangle", image: "images/product-1.jpeg", price: 1950, meta: "Bangle" },
+      {
+        name: "Plum Blossom Bangle",
+        image: "images/bangles-1.png",
+        price: 800,
+        meta: "Bangle",
+        badge: "New",
+        tiers: [
+          { qty: 1, price: 800, label: "1 Bangle" },
+          { qty: 2, price: 1450, label: "2 Bangles" },
+          { qty: 4, price: 2800, label: "4 Bangles" },
+        ],
+      },
     ],
   },
   jhumka: {
