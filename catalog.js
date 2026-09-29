@@ -121,12 +121,8 @@ const CATALOG = {
     blurb:
       "The little extras — hair clips, brooches, and trinkets, each poured and finished by hand.",
     items: [
-      { name: "Petal Hair Clip", image: "images/product-8.jpeg", price: 1100, meta: "Accessory" },
-      { name: "Honey Glow Brooch", image: "images/product-4.jpeg", price: 1250, meta: "Accessory" },
-      { name: "Goldleaf Pin", image: "images/jhumka-4.jpeg", price: 1050, meta: "Accessory" },
-      { name: "Rosewater Clip", image: "images/product-5.jpeg", price: 1150, meta: "Accessory", badge: "New" },
-      { name: "Aurora Trinket", image: "images/product-9.jpeg", price: 1300, meta: "Accessory" },
-      { name: "Celestia Brooch", image: "images/jhumka-5.png", price: 1400, meta: "Accessory" },
+      { name: "Stardust Glitter Pen", image: "images/accessory-1.jpeg", price: 550, meta: "Accessory" },
+      { name: "Blossom Hair Clip Duo", image: "images/accessory-2.png", price: 380, meta: "Set of 2", badge: "New" },
     ],
   },
 };
