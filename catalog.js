@@ -86,6 +86,28 @@ const CATALOG = {
           { qty: 4, price: 2800, label: "4 Bangles" },
         ],
       },
+      {
+        name: "Onyx Gold Leaf Bangle",
+        image: "images/bangles-3.jpeg",
+        price: 800,
+        meta: "Bangle",
+        tiers: [
+          { qty: 1, price: 800, label: "1 Bangle" },
+          { qty: 2, price: 1450, label: "2 Bangles" },
+          { qty: 4, price: 2800, label: "4 Bangles" },
+        ],
+      },
+      {
+        name: "Golden Meadow Bangle",
+        image: "images/bangles-4.jpeg",
+        price: 800,
+        meta: "Bangle",
+        tiers: [
+          { qty: 1, price: 800, label: "1 Bangle" },
+          { qty: 2, price: 1450, label: "2 Bangles" },
+          { qty: 4, price: 2800, label: "4 Bangles" },
+        ],
+      },
     ],
   },
   jhumka: {
