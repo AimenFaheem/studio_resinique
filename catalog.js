@@ -51,13 +51,11 @@ const CATALOG = {
       { name: "Midnight Rose Ring", image: "images/ring-4.jpeg", price: 480, meta: "Ring" },
     ],
   },
-  keychains: {
-    title: "Keychains",
+  bracelets: {
+    title: "Bracelets",
     blurb:
-      "Carry a little colour everywhere — sturdy resin keychains with florals, glitter, and gold accents.",
-    items: [
-      { name: "Blush Initial Keychain", image: "images/keychain.png", price: 500, meta: "Keychain" },
-    ],
+      "Delicate resin bracelets with pressed blooms and gold flecks — new designs on the way.",
+    items: [],
   },
   bangles: {
     title: "Bangles",
@@ -152,6 +150,7 @@ const CATALOG = {
     items: [
       { name: "Stardust Glitter Pen", image: "images/accessory-1.jpeg", price: 550, meta: "Accessory" },
       { name: "Blossom Hair Clip Duo", image: "images/accessory-2.png", price: 380, meta: "Set of 2", badge: "New" },
+      { name: "Blush Initial Keychain", image: "images/keychain.png", price: 500, meta: "Accessory" },
     ],
   },
 };
