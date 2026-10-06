@@ -54,8 +54,11 @@ const CATALOG = {
   bracelets: {
     title: "Bracelets",
     blurb:
-      "Delicate resin bracelets with pressed blooms and gold flecks — new designs on the way.",
-    items: [],
+      "Delicate resin bracelets with pressed blooms and gold flecks on fine chain.",
+    items: [
+      { name: "Ruby Hexagon Bracelet", image: "images/brclt-1.png", price: 850, meta: "Bracelet", badge: "New" },
+      { name: "Forget-Me-Not Bracelet", image: "images/brclt-2.jpeg", price: 1200, meta: "Bracelet" },
+    ],
   },
   bangles: {
     title: "Bangles",
