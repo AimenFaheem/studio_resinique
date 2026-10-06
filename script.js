@@ -57,15 +57,6 @@ document.querySelectorAll(".faq-question").forEach((btn) => {
   });
 });
 
-// Wishlist heart toggle
-document.querySelectorAll(".wishlist").forEach((btn) => {
-  btn.addEventListener("click", (e) => {
-    e.stopPropagation();
-    const active = btn.classList.toggle("active");
-    btn.innerHTML = active ? "♥" : "♡"; // filled vs outline heart
-  });
-});
-
 // Product image zoom — click the image (or its zoom icon) to view it
 // at its natural size in a lightbox, instead of the small card crop.
 const ZOOM_ICON =

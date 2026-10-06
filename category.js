@@ -1,6 +1,6 @@
 // ===== Category page renderer =====
 // Reads ?cat=<slug> from the URL and renders that category's products.
-// Runs BEFORE script.js, so the cart/wishlist handlers bind to these cards.
+// Runs BEFORE script.js, so the cart/zoom handlers bind to these cards.
 (function () {
   const slug = (new URLSearchParams(location.search).get("cat") || "").toLowerCase();
   const data = typeof CATALOG !== "undefined" ? CATALOG[slug] : null;
@@ -57,7 +57,6 @@
         <div class="product-media">
           <img src="${it.image}" alt="${it.name}" loading="lazy" />
           ${it.badge ? `<span class="product-badge">${it.badge}</span>` : ""}
-          <button class="wishlist" aria-label="Add to wishlist">&#9825;</button>
         </div>
         <div class="product-info">
           <h3>${it.name}</h3>
