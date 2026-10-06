@@ -50,11 +50,6 @@
 
   const fmt = (n) => "Rs " + n.toLocaleString("en-US");
 
-  if (!data.items.length) {
-    grid.innerHTML = '<p class="cat-empty">New pieces are on their way — check back soon!</p>';
-    return;
-  }
-
   grid.innerHTML = data.items
     .map(
       (it) => `
