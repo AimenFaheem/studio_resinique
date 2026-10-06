@@ -558,6 +558,7 @@ section { padding: clamp(4rem, 8vw, 7rem) 0; }
   aspect-ratio: 1 / 1;
   border-radius: var(--radius);
   overflow: hidden;
+  cursor: zoom-in;
   transition: transform 0.4s var(--ease), box-shadow 0.4s var(--ease);
 }
 .product:hover .product-media {
@@ -603,6 +604,66 @@ section { padding: clamp(4rem, 8vw, 7rem) 0; }
 .product:hover .wishlist { opacity: 1; transform: scale(1); }
 .wishlist:hover { background: var(--ivory); }
 .wishlist.active { color: #fff; background: var(--blush-deep); opacity: 1; transform: scale(1); }
+
+.zoom-btn {
+  position: absolute; bottom: 0.7rem; right: 0.7rem;
+  z-index: 2;
+  display: grid;
+  place-items: center;
+  width: 38px; height: 38px;
+  border: none; border-radius: 50%;
+  background: rgba(255, 253, 251, 0.85);
+  color: var(--ink);
+  cursor: pointer;
+  opacity: 0;
+  transform: scale(0.8);
+  transition: opacity 0.3s var(--ease), transform 0.3s var(--ease), background 0.2s ease;
+}
+.product:hover .zoom-btn { opacity: 1; transform: scale(1); }
+.zoom-btn:hover { background: var(--ivory); }
+
+/* Product image zoom lightbox — shows the image at its natural size,
+   scaled down only if it's larger than the viewport. */
+.img-lightbox {
+  position: fixed;
+  inset: 0;
+  z-index: 210;
+  display: grid;
+  place-items: center;
+  padding: 1.5rem;
+  background: rgba(58, 51, 48, 0.82);
+  -webkit-backdrop-filter: blur(4px);
+  backdrop-filter: blur(4px);
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s var(--ease), visibility 0.3s;
+}
+.img-lightbox.open { opacity: 1; visibility: visible; }
+.img-lb-close {
+  position: absolute;
+  top: 1.2rem; right: 1.4rem;
+  display: grid;
+  place-items: center;
+  width: 44px; height: 44px;
+  border: none;
+  border-radius: 50%;
+  background: rgba(255, 253, 251, 0.92);
+  color: var(--ink);
+  font-size: 1.5rem;
+  line-height: 1;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+.img-lb-close:hover { background: var(--ivory); }
+.img-lb-img {
+  display: block;
+  max-width: 92vw;
+  max-height: 88vh;
+  width: auto;
+  height: auto;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+}
 
 .product-info {
   padding-top: 1.2rem;

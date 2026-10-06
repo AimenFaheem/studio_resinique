@@ -66,6 +66,60 @@ document.querySelectorAll(".wishlist").forEach((btn) => {
   });
 });
 
+// Product image zoom — click the image (or its zoom icon) to view it
+// at its natural size in a lightbox, instead of the small card crop.
+const ZOOM_ICON =
+  '<svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="7"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>';
+
+const imgLightbox = document.createElement("div");
+imgLightbox.className = "img-lightbox";
+imgLightbox.setAttribute("aria-hidden", "true");
+imgLightbox.innerHTML =
+  '<button type="button" class="img-lb-close" aria-label="Close zoomed image">&times;</button><img class="img-lb-img" alt="" />';
+document.body.appendChild(imgLightbox);
+const imgLbImg = imgLightbox.querySelector(".img-lb-img");
+const imgLbClose = imgLightbox.querySelector(".img-lb-close");
+
+const openImgLightbox = (src, alt) => {
+  imgLbImg.src = src;
+  imgLbImg.alt = alt || "";
+  imgLightbox.classList.add("open");
+  imgLightbox.setAttribute("aria-hidden", "false");
+  document.body.style.overflow = "hidden";
+};
+const closeImgLightbox = () => {
+  if (!imgLightbox.classList.contains("open")) return;
+  imgLightbox.classList.remove("open");
+  imgLightbox.setAttribute("aria-hidden", "true");
+  imgLbImg.src = "";
+  if (!cartDrawer.classList.contains("open") && !checkoutModal.classList.contains("open")) {
+    document.body.style.overflow = "";
+  }
+};
+imgLbClose.addEventListener("click", closeImgLightbox);
+imgLightbox.addEventListener("click", (e) => {
+  if (e.target === imgLightbox) closeImgLightbox();
+});
+
+document.querySelectorAll(".product-media").forEach((media) => {
+  const img = media.querySelector("img");
+  if (!img) return;
+
+  const zoomBtn = document.createElement("button");
+  zoomBtn.type = "button";
+  zoomBtn.className = "zoom-btn";
+  zoomBtn.setAttribute("aria-label", "Zoom image");
+  zoomBtn.innerHTML = ZOOM_ICON;
+  media.appendChild(zoomBtn);
+
+  const openZoom = (e) => {
+    e.stopPropagation();
+    openImgLightbox(img.getAttribute("src"), img.getAttribute("alt"));
+  };
+  zoomBtn.addEventListener("click", openZoom);
+  img.addEventListener("click", openZoom);
+});
+
 // ===== Config =====
 const CART_KEY = "resinique_cart";
 const CONTACT_KEY = "resinique_customer";
@@ -453,7 +507,8 @@ if (checkoutForm) {
 // Esc closes the modal first, otherwise the cart drawer
 document.addEventListener("keydown", (e) => {
   if (e.key !== "Escape") return;
-  if (checkoutModal && checkoutModal.classList.contains("open")) closeCheckout();
+  if (imgLightbox.classList.contains("open")) closeImgLightbox();
+  else if (checkoutModal && checkoutModal.classList.contains("open")) closeCheckout();
   else closeCart();
 });
 
