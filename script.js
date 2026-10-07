@@ -1,5 +1,84 @@
 // ===== Studio Resinique — homepage interactions =====
 
+// Launch promo popup — shown once ever, on the visitor's first page load.
+const PROMO_SEEN_KEY = "resinique_promo_seen";
+let promoEl = null;
+let closePromoPopup = null;
+(function initPromoPopup() {
+  let alreadySeen = true;
+  try {
+    alreadySeen = localStorage.getItem(PROMO_SEEN_KEY) === "1";
+  } catch {
+    alreadySeen = false;
+  }
+  if (alreadySeen) return;
+
+  const promoBackdrop = document.createElement("div");
+  promoBackdrop.className = "promo-backdrop";
+  promoBackdrop.setAttribute("aria-hidden", "true");
+  promoBackdrop.innerHTML = `
+    <div class="promo-popup" role="dialog" aria-modal="true" aria-labelledby="promoTitle">
+      <button type="button" class="promo-close" aria-label="Close">&times;</button>
+      <span class="promo-badge">Launch Celebration</span>
+      <span class="promo-flourish" aria-hidden="true">&#10047;</span>
+      <h2 id="promoTitle">We're officially live!</h2>
+      <p>To celebrate the launch of Studio Resinique, enjoy <span class="promo-highlight">10% off</span> your first order.</p>
+      <div class="promo-code">
+        <span class="promo-code-value">WELCOME10</span>
+        <button type="button" class="promo-copy-btn">Copy</button>
+      </div>
+      <p class="promo-note">Mention this code when you check out and we'll apply your discount.</p>
+      <button type="button" class="btn promo-cta">Start Shopping</button>
+    </div>`;
+  document.body.appendChild(promoBackdrop);
+  promoEl = promoBackdrop;
+
+  const markSeen = () => {
+    try {
+      localStorage.setItem(PROMO_SEEN_KEY, "1");
+    } catch {}
+  };
+
+  const closePromo = () => {
+    promoBackdrop.classList.remove("open");
+    promoBackdrop.setAttribute("aria-hidden", "true");
+    document.body.style.overflow = "";
+    setTimeout(() => promoBackdrop.remove(), 400);
+  };
+
+  promoBackdrop.querySelector(".promo-close").addEventListener("click", closePromo);
+  promoBackdrop.querySelector(".promo-cta").addEventListener("click", closePromo);
+  promoBackdrop.addEventListener("click", (e) => {
+    if (e.target === promoBackdrop) closePromo();
+  });
+
+  const copyBtn = promoBackdrop.querySelector(".promo-copy-btn");
+  copyBtn.addEventListener("click", async () => {
+    const original = copyBtn.textContent;
+    try {
+      await navigator.clipboard.writeText("WELCOME10");
+      copyBtn.textContent = "Copied!";
+      copyBtn.classList.add("copied");
+    } catch {
+      copyBtn.textContent = "WELCOME10";
+    }
+    setTimeout(() => {
+      copyBtn.textContent = original;
+      copyBtn.classList.remove("copied");
+    }, 1600);
+  });
+
+  markSeen();
+  setTimeout(() => {
+    promoBackdrop.classList.add("open");
+    promoBackdrop.setAttribute("aria-hidden", "false");
+    document.body.style.overflow = "hidden";
+  }, 700);
+
+  // Exposed so the shared Escape-key handler further down can close this too.
+  closePromoPopup = closePromo;
+})();
+
 // Mobile nav toggle
 const navToggle = document.getElementById("navToggle");
 const nav = document.getElementById("nav");
@@ -498,7 +577,8 @@ if (checkoutForm) {
 // Esc closes the modal first, otherwise the cart drawer
 document.addEventListener("keydown", (e) => {
   if (e.key !== "Escape") return;
-  if (imgLightbox.classList.contains("open")) closeImgLightbox();
+  if (promoEl && promoEl.classList.contains("open")) closePromoPopup();
+  else if (imgLightbox.classList.contains("open")) closeImgLightbox();
   else if (checkoutModal && checkoutModal.classList.contains("open")) closeCheckout();
   else closeCart();
 });
