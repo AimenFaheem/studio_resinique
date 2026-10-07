@@ -23,11 +23,6 @@ let closePromoPopup = null;
       <span class="promo-flourish" aria-hidden="true">&#10047;</span>
       <h2 id="promoTitle">We're officially live!</h2>
       <p>To celebrate the launch of Studio Resinique, enjoy <span class="promo-highlight">10% off</span> your first order.</p>
-      <div class="promo-code">
-        <span class="promo-code-value">WELCOME10</span>
-        <button type="button" class="promo-copy-btn">Copy</button>
-      </div>
-      <p class="promo-note">Mention this code when you check out and we'll apply your discount.</p>
       <button type="button" class="btn promo-cta">Start Shopping</button>
     </div>`;
   document.body.appendChild(promoBackdrop);
@@ -50,22 +45,6 @@ let closePromoPopup = null;
   promoBackdrop.querySelector(".promo-cta").addEventListener("click", closePromo);
   promoBackdrop.addEventListener("click", (e) => {
     if (e.target === promoBackdrop) closePromo();
-  });
-
-  const copyBtn = promoBackdrop.querySelector(".promo-copy-btn");
-  copyBtn.addEventListener("click", async () => {
-    const original = copyBtn.textContent;
-    try {
-      await navigator.clipboard.writeText("WELCOME10");
-      copyBtn.textContent = "Copied!";
-      copyBtn.classList.add("copied");
-    } catch {
-      copyBtn.textContent = "WELCOME10";
-    }
-    setTimeout(() => {
-      copyBtn.textContent = original;
-      copyBtn.classList.remove("copied");
-    }, 1600);
   });
 
   markSeen();
