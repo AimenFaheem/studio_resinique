@@ -4,12 +4,25 @@
 // browser session sees it again, as long as the offer is active), and
 // once dismissed, a slim urgency ticker with a live countdown that
 // keeps running across the rest of that visit's pages.
+// Uses a session cookie (not sessionStorage) so the "seen" state is
+// shared across every tab of the same browser session, and survives
+// in restricted/embedded browsers (e.g. in-app webviews) that can
+// block sessionStorage but still support plain cookies.
 // ---- Edit this to change when the offer actually ends ----
 const PROMO_END = new Date("2026-10-14T23:59:59+05:00");
-const PROMO_SEEN_KEY = "resinique_promo_seen"; // sessionStorage: shown once per visit
-const PROMO_TICKER_KEY = "resinique_promo_ticker"; // sessionStorage: ticker on for rest of visit
+const PROMO_SEEN_KEY = "resinique_promo_seen"; // shown once per browser session
+const PROMO_TICKER_KEY = "resinique_promo_ticker"; // ticker on for rest of session
 let promoEl = null;
 let closePromoPopup = null;
+
+function getPromoCookie(name) {
+  const match = document.cookie.match(new RegExp("(?:^|; )" + name + "=([^;]*)"));
+  return match ? match[1] : null;
+}
+function setPromoCookie(name) {
+  // No max-age/expires → a session cookie, cleared when the browser fully closes.
+  document.cookie = name + "=1; path=/; SameSite=Lax";
+}
 
 function renderPromoTicker() {
   if (Date.now() >= PROMO_END.getTime()) return;
@@ -56,14 +69,8 @@ function renderPromoTicker() {
 }
 
 (function initPromoPopup() {
-  let alreadySeen = true;
-  let tickerActive = false;
-  try {
-    alreadySeen = sessionStorage.getItem(PROMO_SEEN_KEY) === "1";
-    tickerActive = sessionStorage.getItem(PROMO_TICKER_KEY) === "1";
-  } catch {
-    alreadySeen = false;
-  }
+  const alreadySeen = getPromoCookie(PROMO_SEEN_KEY) === "1";
+  const tickerActive = getPromoCookie(PROMO_TICKER_KEY) === "1";
 
   if (tickerActive) renderPromoTicker();
   if (alreadySeen || Date.now() >= PROMO_END.getTime()) return;
@@ -84,20 +91,12 @@ function renderPromoTicker() {
   document.body.appendChild(promoBackdrop);
   promoEl = promoBackdrop;
 
-  const markSeen = () => {
-    try {
-      sessionStorage.setItem(PROMO_SEEN_KEY, "1");
-    } catch {}
-  };
-
   const closePromo = () => {
     promoBackdrop.classList.remove("open");
     promoBackdrop.setAttribute("aria-hidden", "true");
     document.body.style.overflow = "";
     setTimeout(() => promoBackdrop.remove(), 400);
-    try {
-      sessionStorage.setItem(PROMO_TICKER_KEY, "1");
-    } catch {}
+    setPromoCookie(PROMO_TICKER_KEY);
     renderPromoTicker();
   };
 
@@ -107,12 +106,12 @@ function renderPromoTicker() {
     if (e.target === promoBackdrop) closePromo();
   });
 
-  markSeen();
+  setPromoCookie(PROMO_SEEN_KEY);
   setTimeout(() => {
     promoBackdrop.classList.add("open");
     promoBackdrop.setAttribute("aria-hidden", "false");
     document.body.style.overflow = "hidden";
-  }, 700);
+  }, 2000);
 
   // Exposed so the shared Escape-key handler further down can close this too.
   closePromoPopup = closePromo;
