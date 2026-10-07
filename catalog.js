@@ -45,10 +45,13 @@ const CATALOG = {
     blurb:
       "Adjustable resin rings with pearl flecks, petals, and pigment — one-of-a-kind little statements.",
     items: [
-      { name: "Wildflower Gold Ring", image: "images/ring-1.jpeg", price: 480, meta: "Ring" },
-      { name: "Garden Leaf Ring", image: "images/ring-2.jpeg", price: 480, meta: "Ring" },
-      { name: "Baby's Breath Ring", image: "images/ring-3.jpeg", price: 480, meta: "Ring" },
-      { name: "Midnight Rose Ring", image: "images/ring-4.jpeg", price: 480, meta: "Ring" },
+      { name: "Wildflower Gold Ring", image: "images/ring-1.jpeg", price: 500, meta: "Ring" },
+      { name: "Garden Leaf Ring", image: "images/ring-2.jpeg", price: 500, meta: "Ring" },
+      { name: "Baby's Breath Ring", image: "images/ring-3.jpeg", price: 500, meta: "Ring" },
+      { name: "Midnight Rose Ring", image: "images/ring-4.jpeg", price: 500, meta: "Ring" },
+      { name: "Garnet Initial Ring", image: "images/ring-5.png", price: 500, meta: "Ring", badge: "New" },
+      { name: "Blue Blossom Bee Ring", image: "images/ring-6.png", price: 500, meta: "Ring" },
+      { name: "Midnight Blossom Ring", image: "images/ring-7.png", price: 500, meta: "Ring" },
     ],
   },
   bracelets: {
