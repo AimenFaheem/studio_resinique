@@ -15,7 +15,7 @@ function renderPromoTicker() {
   if (Date.now() >= PROMO_END.getTime()) return;
   if (document.querySelector(".promo-ticker")) return;
 
-  const message = `${String.fromCharCode(10047)} Launch Offer — 10% off your first order`;
+  const message = `${String.fromCharCode(10047)} Launch Offer — 10% off every order`;
   const group = `<div class="promo-ticker-group"><span>${message}</span><span>${message}</span><span>${message}</span></div>`;
   const ticker = document.createElement("div");
   ticker.className = "promo-ticker";
@@ -78,7 +78,7 @@ function renderPromoTicker() {
       <span class="promo-flourish" aria-hidden="true">&#10047;</span>
       <h2 id="promoTitle">We're officially live!</h2>
       <p class="promo-percent"><span class="promo-percent-num">10%</span> OFF</p>
-      <p>Your first order — to celebrate the launch of Studio Resinique.</p>
+      <p>On every order, for a limited time — to celebrate the launch of Studio Resinique.</p>
       <button type="button" class="btn promo-cta">Start Shopping</button>
     </div>`;
   document.body.appendChild(promoBackdrop);
