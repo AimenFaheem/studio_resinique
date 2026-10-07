@@ -295,6 +295,20 @@ const addToCart = (item) => {
   renderCart();
 };
 
+// Show every listed price as a launch sale: a struck-through "original"
+// price next to the real price customers actually pay. Purely visual —
+// the stored/charged price (in cart, sheet, email) never changes.
+const SALE_RATE = 0.9; // the real price is shown as 10% off the "original"
+const salePriceHtml = (price) => {
+  const original = Math.round(price / SALE_RATE / 5) * 5;
+  return `<span class="price-original">Rs ${original.toLocaleString("en-US")}</span><span class="price-sale">Rs ${price.toLocaleString("en-US")}</span>`;
+};
+document.querySelectorAll(".product-price").forEach((el) => {
+  const price = parseInt(el.textContent.replace(/[^\d]/g, ""), 10);
+  if (!price) return;
+  el.innerHTML = salePriceHtml(price);
+});
+
 // Quantity-tier pills (e.g. Bangles: 1 / 2 / 4 pack pricing)
 document.querySelectorAll(".product-tiers").forEach((group) => {
   const priceEl = group.closest(".product-info")?.querySelector(".product-price");
@@ -303,7 +317,7 @@ document.querySelectorAll(".product-tiers").forEach((group) => {
       e.stopPropagation();
       group.querySelectorAll(".tier-btn").forEach((b) => b.classList.remove("active"));
       tierBtn.classList.add("active");
-      if (priceEl) priceEl.textContent = "Rs " + Number(tierBtn.dataset.price).toLocaleString("en-US");
+      if (priceEl) priceEl.innerHTML = salePriceHtml(Number(tierBtn.dataset.price));
     });
   });
 });
@@ -321,7 +335,7 @@ document.querySelectorAll(".add-cart").forEach((btn) => {
       (card.querySelector("h3")?.textContent.trim() || "Item") +
       (activeTier ? ` (${activeTier.dataset.label})` : "");
     const image = card.querySelector("img")?.getAttribute("src") || "";
-    const priceText = card.querySelector(".product-price")?.textContent || "0";
+    const priceText = card.querySelector(".price-sale")?.textContent || "0";
     const price = parseInt(priceText.replace(/[^\d]/g, ""), 10) || 0;
 
     addToCart({ name, image, price });
