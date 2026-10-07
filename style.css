@@ -726,17 +726,26 @@ section { padding: clamp(4rem, 8vw, 7rem) 0; }
   margin-bottom: 0.4rem;
 }
 .promo-popup h2 {
-  font-size: clamp(1.6rem, 4vw, 2.1rem);
+  font-size: clamp(1.4rem, 3.4vw, 1.75rem);
+  margin-bottom: 0.7rem;
+}
+.promo-popup .promo-percent {
+  font-family: "Cormorant Garamond", serif;
+  font-size: clamp(2.8rem, 10vw, 3.6rem);
+  font-weight: 700;
+  line-height: 1;
+  letter-spacing: 0.01em;
   margin-bottom: 0.6rem;
+  background: linear-gradient(90deg, var(--gold), var(--blush-deep));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: var(--blush-deep);
+  -webkit-text-fill-color: transparent;
 }
 .promo-popup p {
   font-size: 0.92rem;
   color: var(--ink-soft);
   margin-bottom: 1.2rem;
-}
-.promo-popup .promo-highlight {
-  color: var(--blush-deep);
-  font-weight: 600;
 }
 .promo-cta { width: 100%; margin-top: 0.4rem; }
 
@@ -802,18 +811,29 @@ section { padding: clamp(4rem, 8vw, 7rem) 0; }
 }
 .promo-ticker-label {
   font-family: "Jost", sans-serif;
-  font-size: 0.64rem;
+  font-size: 0.66rem;
+  font-weight: 500;
   letter-spacing: 0.1em;
   text-transform: uppercase;
-  color: rgba(255, 253, 251, 0.7);
+  color: rgba(255, 253, 251, 0.85);
 }
 .promo-ticker-time {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.3rem 0.75rem;
+  border-radius: 100px;
+  background: var(--ivory);
   font-family: "Jost", sans-serif;
-  font-size: 0.85rem;
-  font-weight: 600;
+  font-size: 0.86rem;
+  font-weight: 700;
   letter-spacing: 0.03em;
-  color: var(--honey);
+  color: var(--blush-deep);
   font-variant-numeric: tabular-nums;
+  animation: promo-ticker-pulse 2s ease-in-out infinite;
+}
+@keyframes promo-ticker-pulse {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(255, 253, 251, 0.55); }
+  50% { box-shadow: 0 0 0 6px rgba(255, 253, 251, 0); }
 }
 @media (max-width: 640px) {
   .promo-ticker-countdown { display: none; }
