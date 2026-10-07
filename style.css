@@ -148,7 +148,7 @@ ul, ol { list-style: none; }
 /* ===== Header ===== */
 .site-header {
   position: sticky;
-  top: 0;
+  top: var(--promo-ticker-h, 0px);
   background: rgba(250, 246, 241, 0.98);
   border-bottom: 1px solid var(--line);
   z-index: 50;
@@ -742,6 +742,81 @@ section { padding: clamp(4rem, 8vw, 7rem) 0; }
 
 @media (max-width: 480px) {
   .promo-popup { padding: 2.4rem 1.5rem 1.8rem; }
+}
+
+/* Promo ticker — slim urgency bar shown after the popup is dismissed */
+.promo-ticker {
+  position: sticky;
+  top: 0;
+  z-index: 140;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  background: linear-gradient(90deg, var(--ink), #524943);
+  color: var(--ivory);
+  padding: 0.55rem 0;
+  overflow: hidden;
+}
+.promo-ticker-track {
+  flex: 1;
+  min-width: 0;
+  overflow: hidden;
+  -webkit-mask-image: linear-gradient(to right, transparent, black 28px, black calc(100% - 28px), transparent);
+  mask-image: linear-gradient(to right, transparent, black 28px, black calc(100% - 28px), transparent);
+}
+.promo-ticker-inner {
+  display: flex;
+  width: max-content;
+  animation: promo-ticker-scroll 18s linear infinite;
+}
+.promo-ticker-group {
+  display: flex;
+  align-items: center;
+  gap: 2.5rem;
+  padding-left: 1.5rem;
+  flex-shrink: 0;
+}
+.promo-ticker-group span {
+  font-family: "Jost", sans-serif;
+  font-size: 0.74rem;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  white-space: nowrap;
+  color: var(--ivory);
+}
+.promo-ticker-group span.promo-ticker-dot { color: var(--gold); }
+@keyframes promo-ticker-scroll {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+.promo-ticker-countdown {
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0 1.3rem 0 1rem;
+  margin-right: 0.5rem;
+  border-left: 1px solid rgba(255, 253, 251, 0.25);
+  white-space: nowrap;
+}
+.promo-ticker-label {
+  font-family: "Jost", sans-serif;
+  font-size: 0.64rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: rgba(255, 253, 251, 0.7);
+}
+.promo-ticker-time {
+  font-family: "Jost", sans-serif;
+  font-size: 0.85rem;
+  font-weight: 600;
+  letter-spacing: 0.03em;
+  color: var(--honey);
+  font-variant-numeric: tabular-nums;
+}
+@media (max-width: 640px) {
+  .promo-ticker-countdown { display: none; }
 }
 
 .product-info {

@@ -1,17 +1,72 @@
 // ===== Studio Resinique — homepage interactions =====
 
-// Launch promo popup — shown once ever, on the visitor's first page load.
-const PROMO_SEEN_KEY = "resinique_promo_seen";
+// Launch promo: a popup on the first page of every visit (each new
+// browser session sees it again, as long as the offer is active), and
+// once dismissed, a slim urgency ticker with a live countdown that
+// keeps running across the rest of that visit's pages.
+// ---- Edit this to change when the offer actually ends ----
+const PROMO_END = new Date("2026-10-14T23:59:59+05:00");
+const PROMO_SEEN_KEY = "resinique_promo_seen"; // sessionStorage: shown once per visit
+const PROMO_TICKER_KEY = "resinique_promo_ticker"; // sessionStorage: ticker on for rest of visit
 let promoEl = null;
 let closePromoPopup = null;
+
+function renderPromoTicker() {
+  if (Date.now() >= PROMO_END.getTime()) return;
+  if (document.querySelector(".promo-ticker")) return;
+
+  const message = `${String.fromCharCode(10047)} Launch Offer — 10% off your first order`;
+  const group = `<div class="promo-ticker-group"><span>${message}</span><span>${message}</span><span>${message}</span></div>`;
+  const ticker = document.createElement("div");
+  ticker.className = "promo-ticker";
+  ticker.innerHTML = `
+    <div class="promo-ticker-track">
+      <div class="promo-ticker-inner">${group}${group}</div>
+    </div>
+    <div class="promo-ticker-countdown">
+      <span class="promo-ticker-label">Offer ends in</span>
+      <span class="promo-ticker-time">--</span>
+    </div>`;
+  document.body.insertBefore(ticker, document.body.firstChild);
+
+  const setTickerHeight = () => {
+    document.documentElement.style.setProperty("--promo-ticker-h", ticker.offsetHeight + "px");
+  };
+  setTickerHeight();
+  window.addEventListener("resize", setTickerHeight);
+
+  const timeEl = ticker.querySelector(".promo-ticker-time");
+  const updateCountdown = () => {
+    const msLeft = PROMO_END.getTime() - Date.now();
+    if (msLeft <= 0) {
+      ticker.remove();
+      document.documentElement.style.setProperty("--promo-ticker-h", "0px");
+      clearInterval(countdownTimer);
+      return;
+    }
+    const d = Math.floor(msLeft / 86400000);
+    const h = Math.floor((msLeft % 86400000) / 3600000);
+    const m = Math.floor((msLeft % 3600000) / 60000);
+    const s = Math.floor((msLeft % 60000) / 1000);
+    const pad = (n) => String(n).padStart(2, "0");
+    timeEl.textContent = (d > 0 ? d + "d " : "") + `${pad(h)}h ${pad(m)}m ${pad(s)}s`;
+  };
+  updateCountdown();
+  const countdownTimer = setInterval(updateCountdown, 1000);
+}
+
 (function initPromoPopup() {
   let alreadySeen = true;
+  let tickerActive = false;
   try {
-    alreadySeen = localStorage.getItem(PROMO_SEEN_KEY) === "1";
+    alreadySeen = sessionStorage.getItem(PROMO_SEEN_KEY) === "1";
+    tickerActive = sessionStorage.getItem(PROMO_TICKER_KEY) === "1";
   } catch {
     alreadySeen = false;
   }
-  if (alreadySeen) return;
+
+  if (tickerActive) renderPromoTicker();
+  if (alreadySeen || Date.now() >= PROMO_END.getTime()) return;
 
   const promoBackdrop = document.createElement("div");
   promoBackdrop.className = "promo-backdrop";
@@ -30,7 +85,7 @@ let closePromoPopup = null;
 
   const markSeen = () => {
     try {
-      localStorage.setItem(PROMO_SEEN_KEY, "1");
+      sessionStorage.setItem(PROMO_SEEN_KEY, "1");
     } catch {}
   };
 
@@ -39,6 +94,10 @@ let closePromoPopup = null;
     promoBackdrop.setAttribute("aria-hidden", "true");
     document.body.style.overflow = "";
     setTimeout(() => promoBackdrop.remove(), 400);
+    try {
+      sessionStorage.setItem(PROMO_TICKER_KEY, "1");
+    } catch {}
+    renderPromoTicker();
   };
 
   promoBackdrop.querySelector(".promo-close").addEventListener("click", closePromo);
