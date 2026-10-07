@@ -61,6 +61,7 @@ const CATALOG = {
     items: [
       { name: "Ruby Hexagon Bracelet", image: "images/brclt-1.png", price: 850, meta: "Bracelet", badge: "New" },
       { name: "Forget-Me-Not Bracelet", image: "images/brclt-2.jpeg", price: 1200, meta: "Bracelet" },
+      { name: "Plum Hexagon Trio Bracelet", image: "images/brclt-3.jpeg", price: 1000, meta: "Bracelet" },
     ],
   },
   bangles: {
