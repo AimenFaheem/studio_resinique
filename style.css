@@ -742,6 +742,10 @@ section { padding: clamp(4rem, 8vw, 7rem) 0; }
   color: var(--blush-deep);
   -webkit-text-fill-color: transparent;
 }
+.promo-popup .promo-percent-num {
+  font-size: 1.2em;
+  font-variant-numeric: lining-nums;
+}
 .promo-popup p {
   font-size: 0.92rem;
   color: var(--ink-soft);

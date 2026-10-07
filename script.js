@@ -77,7 +77,7 @@ function renderPromoTicker() {
       <span class="promo-badge">Launch Celebration</span>
       <span class="promo-flourish" aria-hidden="true">&#10047;</span>
       <h2 id="promoTitle">We're officially live!</h2>
-      <p class="promo-percent">10% OFF</p>
+      <p class="promo-percent"><span class="promo-percent-num">10%</span> OFF</p>
       <p>Your first order — to celebrate the launch of Studio Resinique.</p>
       <button type="button" class="btn promo-cta">Start Shopping</button>
     </div>`;
