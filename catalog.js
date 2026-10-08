@@ -52,6 +52,9 @@ const CATALOG = {
       { name: "Garnet Initial Ring", image: "images/ring-5.png", price: 500, meta: "Ring", badge: "New" },
       { name: "Blue Blossom Bee Ring", image: "images/ring-6.png", price: 500, meta: "Ring" },
       { name: "Midnight Blossom Ring", image: "images/ring-7.png", price: 500, meta: "Ring" },
+      { name: "Sky Blossom Ring", image: "images/ring-8.png", price: 500, meta: "Stainless steel" },
+      { name: "Emerald Gold Ring", image: "images/ring-9.png", price: 500, meta: "Stainless steel" },
+      { name: "Rose Quartz Ring", image: "images/ring-10.png", price: 500, meta: "Stainless steel" },
     ],
   },
   bracelets: {
