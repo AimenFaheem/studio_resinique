@@ -26,6 +26,8 @@ const CATALOG = {
       { name: "Rosy Round Drops", image: "images/earring-17.jpeg", price: 550, meta: "Earrings" },
       { name: "Emerald Round Drops", image: "images/earring-18.jpeg", price: 550, meta: "Earrings" },
       { name: "Midnight Daisy Drops", image: "images/earring-19.jpeg", price: 650, meta: "Earrings" },
+      { name: "Amber Heart Drops", image: "images/earring-20.jpeg", price: 650, meta: "Earrings" },
+      { name: "Cherry Pearl Heart Drops", image: "images/earring-21.jpeg", price: 650, meta: "Earrings" },
     ],
   },
   pendants: {
