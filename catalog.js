@@ -152,6 +152,9 @@ const CATALOG = {
       { name: "Midnight Bloom Mini Jhumka", image: "images/mini-8.png", price: 1250, meta: "Mini Jhumka" },
       { name: "Teal Stone Mini Jhumka", image: "images/mini-9.jpeg", price: 1250, meta: "Mini Jhumka" },
       { name: "Lilac Bloom Mini Jhumka", image: "images/mini-10.jpeg", price: 1250, meta: "Mini Jhumka" },
+      { name: "Teal Sprig Mini Jhumka", image: "images/mini-11.jpeg", price: 1250, meta: "Mini Jhumka" },
+      { name: "Crimson Drop Mini Jhumka", image: "images/mini-12.jpeg", price: 1250, meta: "Mini Jhumka" },
+      { name: "Jade Mini Jhumka", image: "images/mini-13.jpeg", price: 1250, meta: "Mini Jhumka" },
     ],
   },
   accessories: {
