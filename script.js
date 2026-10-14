@@ -8,8 +8,12 @@
 // shared across every tab of the same browser session, and survives
 // in restricted/embedded browsers (e.g. in-app webviews) that can
 // block sessionStorage but still support plain cookies.
-// ---- Edit this to change when the offer actually ends ----
-const PROMO_END = new Date("2026-10-14T23:59:59+05:00");
+// The countdown auto-renews on a rolling 7-day window instead of a
+// fixed date, so the offer keeps looping indefinitely without needing
+// a real end date — ask to have it removed whenever the promo should
+// actually stop.
+const PROMO_DURATION_MS = 7 * 24 * 60 * 60 * 1000;
+const PROMO_END = new Date(Date.now() + PROMO_DURATION_MS);
 const PROMO_SEEN_KEY = "resinique_promo_seen"; // shown once per browser session
 const PROMO_TICKER_KEY = "resinique_promo_ticker"; // ticker on for rest of session
 let promoEl = null;
