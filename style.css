@@ -647,6 +647,21 @@ section { padding: clamp(4rem, 8vw, 7rem) 0; }
   border-radius: var(--radius);
   box-shadow: var(--shadow);
 }
+.img-lb-img.img-loading { min-width: 280px; min-height: 280px; }
+
+/* ===== Image loading skeleton =====
+   Shown on any <img> while it's still loading, instead of a blank box
+   or a flash of a broken-image icon. Purely a background, so it's
+   naturally covered the instant the real image paints. */
+img.img-loading {
+  background: linear-gradient(110deg, var(--line) 8%, #f6f1ea 18%, var(--line) 33%);
+  background-size: 200% 100%;
+  animation: img-shimmer 1.6s linear infinite;
+}
+img.img-error { background: var(--line); }
+@keyframes img-shimmer {
+  to { background-position-x: -200%; }
+}
 
 /* ===== Launch promo popup ===== */
 .promo-backdrop {

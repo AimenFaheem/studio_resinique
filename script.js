@@ -192,7 +192,40 @@ document.body.appendChild(imgLightbox);
 const imgLbImg = imgLightbox.querySelector(".img-lb-img");
 const imgLbClose = imgLightbox.querySelector(".img-lb-close");
 
+// Shimmer skeleton while an image is loading, instead of a blank box
+// or a broken-image flash. Works on any <img>; a no-op if the image
+// is already cached/loaded. Safe to re-run on a scope (e.g. a page of
+// freshly rendered cards) since each image is only wired up once.
+function initImageLoaders(scope) {
+  scope.querySelectorAll("img").forEach((img) => {
+    if (img.dataset.imgInit) return;
+    img.dataset.imgInit = "1";
+    if (img.complete && img.naturalWidth > 0) return;
+    img.classList.add("img-loading");
+    img.addEventListener("load", () => img.classList.remove("img-loading"), { once: true });
+    img.addEventListener(
+      "error",
+      () => {
+        img.classList.remove("img-loading");
+        img.classList.add("img-error");
+      },
+      { once: true }
+    );
+  });
+}
+
+// The lightbox reuses one <img> for every zoom, swapping its src each
+// time, so it gets its own loading/error wiring instead of the
+// once-per-element guard initImageLoaders uses.
+imgLbImg.addEventListener("load", () => imgLbImg.classList.remove("img-loading"));
+imgLbImg.addEventListener("error", () => {
+  imgLbImg.classList.remove("img-loading");
+  imgLbImg.classList.add("img-error");
+});
+
 const openImgLightbox = (src, alt) => {
+  imgLbImg.classList.remove("img-error");
+  imgLbImg.classList.add("img-loading");
   imgLbImg.src = src;
   imgLbImg.alt = alt || "";
   imgLightbox.classList.add("open");
@@ -431,7 +464,8 @@ function initProductCards(scope) {
 }
 
 initProductCards(document);
-window.ResiniqueUI = { initProductCards };
+initImageLoaders(document);
+window.ResiniqueUI = { initProductCards, initImageLoaders };
 
 // Cart item controls (delegated: qty +/- and remove)
 if (cartItemsEl) {

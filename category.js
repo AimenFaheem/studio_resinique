@@ -142,7 +142,10 @@
     renderPagination(totalPages);
     // script.js has already loaded by the time a visitor can type or
     // click a page button, so its shared card-binding helper is ready.
-    if (window.ResiniqueUI) window.ResiniqueUI.initProductCards(grid);
+    if (window.ResiniqueUI) {
+      window.ResiniqueUI.initProductCards(grid);
+      window.ResiniqueUI.initImageLoaders(grid);
+    }
   };
 
   // Tokenized word-prefix matching, so searching "ring" matches items
