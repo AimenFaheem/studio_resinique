@@ -31,6 +31,8 @@ const CATALOG = {
       { name: "Emerald Hexagon Pearl Drops", image: "images/earring-22.png", price: 480, meta: "Earrings" },
       { name: "Midnight Blossom Pearl Drops", image: "images/earring-23.png", price: 480, meta: "Earrings" },
       { name: "Lilac Hexagon Pearl Drops", image: "images/earring-24.png", price: 480, meta: "Earrings" },
+      { name: "Blue Butterfly Drops", image: "images/earring-25.jpeg", price: 550, meta: "Earrings" },
+      { name: "Amber Butterfly Studs", image: "images/earring-26.jpeg", price: 550, meta: "Earrings" },
     ],
   },
   pendants: {
