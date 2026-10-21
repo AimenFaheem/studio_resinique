@@ -145,15 +145,22 @@
     if (window.ResiniqueUI) window.ResiniqueUI.initProductCards(grid);
   };
 
+  // Tokenized word-prefix matching, so searching "ring" matches items
+  // whose name/meta/category contains a word starting with "ring"
+  // (e.g. "Ring", "Rings") without also matching "Earrings" — a plain
+  // substring search would wrongly match "ring" inside "earrings".
+  const tokenize = (s) => s.toLowerCase().split(/[^a-z0-9]+/).filter(Boolean);
+
   if (searchWrap) searchWrap.hidden = false;
   if (searchInput) {
     searchInput.addEventListener("input", () => {
-      const q = searchInput.value.trim().toLowerCase();
-      filteredItems = !q
+      const terms = tokenize(searchInput.value);
+      filteredItems = !terms.length
         ? data.items
-        : data.items.filter((it) =>
-            `${it.name} ${it.meta} ${it.category || ""}`.toLowerCase().includes(q)
-          );
+        : data.items.filter((it) => {
+            const words = tokenize(`${it.name} ${it.meta} ${it.category || ""}`);
+            return terms.every((term) => words.some((w) => w.startsWith(term)));
+          });
       currentPage = 1;
       renderPage();
     });
