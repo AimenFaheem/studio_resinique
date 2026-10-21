@@ -213,25 +213,6 @@ imgLightbox.addEventListener("click", (e) => {
   if (e.target === imgLightbox) closeImgLightbox();
 });
 
-document.querySelectorAll(".product-media").forEach((media) => {
-  const img = media.querySelector("img");
-  if (!img) return;
-
-  const zoomBtn = document.createElement("button");
-  zoomBtn.type = "button";
-  zoomBtn.className = "zoom-btn";
-  zoomBtn.setAttribute("aria-label", "Zoom image");
-  zoomBtn.innerHTML = ZOOM_ICON;
-  media.appendChild(zoomBtn);
-
-  const openZoom = (e) => {
-    e.stopPropagation();
-    openImgLightbox(img.getAttribute("src"), img.getAttribute("alt"));
-  };
-  zoomBtn.addEventListener("click", openZoom);
-  img.addEventListener("click", openZoom);
-});
-
 // ===== Config =====
 const CART_KEY = "resinique_cart";
 const CONTACT_KEY = "resinique_customer";
@@ -366,53 +347,91 @@ const salePriceHtml = (price) => {
   const original = Math.round(price / SALE_RATE / 5) * 5;
   return `<span class="price-original">Rs ${original.toLocaleString("en-US")}</span><span class="price-sale">Rs ${price.toLocaleString("en-US")}</span>`;
 };
-document.querySelectorAll(".product-price").forEach((el) => {
-  const price = parseInt(el.textContent.replace(/[^\d]/g, ""), 10);
-  if (!price) return;
-  el.innerHTML = salePriceHtml(price);
-});
 
-// Quantity-tier pills (e.g. Bangles: 1 / 2 / 4 pack pricing)
-document.querySelectorAll(".product-tiers").forEach((group) => {
-  const priceEl = group.closest(".product-info")?.querySelector(".product-price");
-  group.querySelectorAll(".tier-btn").forEach((tierBtn) => {
-    tierBtn.addEventListener("click", (e) => {
+// Wires up every product card's zoom button, sale-price markup, quantity
+// tiers, and Add to Cart button. Called once for the whole page on load,
+// and again (scoped to just the grid) whenever a page re-renders product
+// cards after load — e.g. the All Jewelry page's search/pagination —
+// since those cards don't exist yet for the page-load pass to find.
+// Each piece guards against double-binding so re-running it is safe.
+function initProductCards(scope) {
+  scope.querySelectorAll(".product-price").forEach((el) => {
+    if (el.dataset.saleApplied) return;
+    const price = parseInt(el.textContent.replace(/[^\d]/g, ""), 10);
+    if (!price) return;
+    el.innerHTML = salePriceHtml(price);
+    el.dataset.saleApplied = "1";
+  });
+
+  scope.querySelectorAll(".product-media").forEach((media) => {
+    if (media.querySelector(".zoom-btn")) return;
+    const img = media.querySelector("img");
+    if (!img) return;
+
+    const zoomBtn = document.createElement("button");
+    zoomBtn.type = "button";
+    zoomBtn.className = "zoom-btn";
+    zoomBtn.setAttribute("aria-label", "Zoom image");
+    zoomBtn.innerHTML = ZOOM_ICON;
+    media.appendChild(zoomBtn);
+
+    const openZoom = (e) => {
       e.stopPropagation();
-      group.querySelectorAll(".tier-btn").forEach((b) => b.classList.remove("active"));
-      tierBtn.classList.add("active");
-      if (priceEl) priceEl.innerHTML = salePriceHtml(Number(tierBtn.dataset.price));
+      openImgLightbox(img.getAttribute("src"), img.getAttribute("alt"));
+    };
+    zoomBtn.addEventListener("click", openZoom);
+    img.addEventListener("click", openZoom);
+  });
+
+  // Quantity-tier pills (e.g. Bangles: 1 / 2 / 4 pack pricing)
+  scope.querySelectorAll(".product-tiers").forEach((group) => {
+    if (group.dataset.tierBound) return;
+    group.dataset.tierBound = "1";
+    const priceEl = group.closest(".product-info")?.querySelector(".product-price");
+    group.querySelectorAll(".tier-btn").forEach((tierBtn) => {
+      tierBtn.addEventListener("click", (e) => {
+        e.stopPropagation();
+        group.querySelectorAll(".tier-btn").forEach((b) => b.classList.remove("active"));
+        tierBtn.classList.add("active");
+        if (priceEl) priceEl.innerHTML = salePriceHtml(Number(tierBtn.dataset.price));
+      });
     });
   });
-});
 
-// "Order Now" buttons → read the product's name, image, price and store it
-document.querySelectorAll(".add-cart").forEach((btn) => {
-  const original = btn.textContent;
-  btn.addEventListener("click", (e) => {
-    e.stopPropagation();
-    const card = btn.closest(".product");
-    if (!card) return;
+  // "Order Now" buttons → read the product's name, image, price and store it
+  scope.querySelectorAll(".add-cart").forEach((btn) => {
+    if (btn.dataset.cartBound) return;
+    btn.dataset.cartBound = "1";
+    const original = btn.textContent;
+    btn.addEventListener("click", (e) => {
+      e.stopPropagation();
+      const card = btn.closest(".product");
+      if (!card) return;
 
-    const activeTier = card.querySelector(".tier-btn.active");
-    const name =
-      (card.querySelector("h3")?.textContent.trim() || "Item") +
-      (activeTier ? ` (${activeTier.dataset.label})` : "");
-    const image = card.querySelector("img")?.getAttribute("src") || "";
-    const priceText = card.querySelector(".price-sale")?.textContent || "0";
-    const price = parseInt(priceText.replace(/[^\d]/g, ""), 10) || 0;
+      const activeTier = card.querySelector(".tier-btn.active");
+      const name =
+        (card.querySelector("h3")?.textContent.trim() || "Item") +
+        (activeTier ? ` (${activeTier.dataset.label})` : "");
+      const image = card.querySelector("img")?.getAttribute("src") || "";
+      const priceText = card.querySelector(".price-sale")?.textContent || "0";
+      const price = parseInt(priceText.replace(/[^\d]/g, ""), 10) || 0;
 
-    addToCart({ name, image, price });
+      addToCart({ name, image, price });
 
-    btn.classList.add("added");
-    btn.textContent = "Added ✓";
-    setTimeout(() => {
-      btn.classList.remove("added");
-      btn.textContent = original;
-    }, 1400);
+      btn.classList.add("added");
+      btn.textContent = "Added ✓";
+      setTimeout(() => {
+        btn.classList.remove("added");
+        btn.textContent = original;
+      }, 1400);
 
-    openCart();
+      openCart();
+    });
   });
-});
+}
+
+initProductCards(document);
+window.ResiniqueUI = { initProductCards };
 
 // Cart item controls (delegated: qty +/- and remove)
 if (cartItemsEl) {

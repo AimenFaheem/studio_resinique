@@ -1,15 +1,37 @@
 // ===== Category page renderer =====
 // Reads ?cat=<slug> from the URL and renders that category's products.
+// ?cat=all is a special combined view across every category, with a
+// search box and pagination since it can span 100+ items.
 // Runs BEFORE script.js, so the cart/zoom handlers bind to these cards.
 (function () {
   const slug = (new URLSearchParams(location.search).get("cat") || "").toLowerCase();
-  const data = typeof CATALOG !== "undefined" ? CATALOG[slug] : null;
+  const isAll = slug === "all";
+
+  let data;
+  if (isAll) {
+    const allItems =
+      typeof CATALOG !== "undefined"
+        ? Object.values(CATALOG).flatMap((cat) =>
+            cat.items.map((it) => ({ ...it, category: cat.title }))
+          )
+        : [];
+    data = {
+      title: "All Jewelry",
+      blurb: "Every handmade piece in one place — search or browse by page.",
+      items: allItems,
+    };
+  } else {
+    data = typeof CATALOG !== "undefined" ? CATALOG[slug] : null;
+  }
 
   const grid = document.getElementById("categoryGrid");
   const titleEl = document.getElementById("catTitle");
   const blurbEl = document.getElementById("catBlurb");
   const crumbEl = document.getElementById("catCrumb");
   const countEl = document.getElementById("catCount");
+  const searchWrap = document.getElementById("catSearchBar");
+  const searchInput = document.getElementById("catSearchInput");
+  const paginationEl = document.getElementById("catPagination");
   const descMetaEl = document.querySelector('meta[name="description"]');
   const canonicalEl = document.getElementById("canonicalLink");
   const ogTitleEl = document.getElementById("ogTitle");
@@ -43,16 +65,10 @@
   if (ogImageEl && data.items[0]) {
     ogImageEl.content = "https://studioresinique.com/" + data.items[0].image;
   }
-  if (countEl) {
-    countEl.textContent =
-      data.items.length + (data.items.length === 1 ? " piece" : " pieces");
-  }
 
   const fmt = (n) => "Rs " + n.toLocaleString("en-US");
 
-  grid.innerHTML = data.items
-    .map(
-      (it) => `
+  const cardHtml = (it) => `
       <article class="product">
         <div class="product-media">
           <img src="${it.image}" alt="${it.name}" loading="lazy" />
@@ -76,7 +92,81 @@
           }
           <button class="add-cart" type="button">Add to Cart</button>
         </div>
-      </article>`
-    )
-    .join("");
+      </article>`;
+
+  if (!isAll) {
+    // Regular category page: render the whole list, no search/pagination.
+    if (countEl) {
+      countEl.textContent = data.items.length + (data.items.length === 1 ? " piece" : " pieces");
+    }
+    grid.innerHTML = data.items.length
+      ? data.items.map(cardHtml).join("")
+      : '<p class="cat-empty">New pieces are on their way — check back soon!</p>';
+    return;
+  }
+
+  // ===== All Jewelry: search + pagination =====
+  const PAGE_SIZE = 12;
+  let currentPage = 1;
+  let filteredItems = data.items;
+
+  const renderPagination = (totalPages) => {
+    if (!paginationEl) return;
+    if (totalPages <= 1) {
+      paginationEl.innerHTML = "";
+      return;
+    }
+    const pageBtn = (page, label, disabled, active) =>
+      `<button type="button" class="page-btn${active ? " active" : ""}" data-page="${page}" ${disabled ? "disabled" : ""}>${label}</button>`;
+    let html = pageBtn(currentPage - 1, "Prev", currentPage === 1, false);
+    for (let p = 1; p <= totalPages; p++) {
+      html += pageBtn(p, String(p), false, p === currentPage);
+    }
+    html += pageBtn(currentPage + 1, "Next", currentPage === totalPages, false);
+    paginationEl.innerHTML = html;
+  };
+
+  const renderPage = () => {
+    const totalPages = Math.max(1, Math.ceil(filteredItems.length / PAGE_SIZE));
+    currentPage = Math.min(currentPage, totalPages);
+    const start = (currentPage - 1) * PAGE_SIZE;
+    const pageItems = filteredItems.slice(start, start + PAGE_SIZE);
+
+    grid.innerHTML = pageItems.length
+      ? pageItems.map(cardHtml).join("")
+      : '<p class="cat-empty">No products match your search.</p>';
+
+    if (countEl) {
+      countEl.textContent = filteredItems.length + (filteredItems.length === 1 ? " piece" : " pieces");
+    }
+    renderPagination(totalPages);
+    // script.js has already loaded by the time a visitor can type or
+    // click a page button, so its shared card-binding helper is ready.
+    if (window.ResiniqueUI) window.ResiniqueUI.initProductCards(grid);
+  };
+
+  if (searchWrap) searchWrap.hidden = false;
+  if (searchInput) {
+    searchInput.addEventListener("input", () => {
+      const q = searchInput.value.trim().toLowerCase();
+      filteredItems = !q
+        ? data.items
+        : data.items.filter((it) =>
+            `${it.name} ${it.meta} ${it.category || ""}`.toLowerCase().includes(q)
+          );
+      currentPage = 1;
+      renderPage();
+    });
+  }
+  if (paginationEl) {
+    paginationEl.addEventListener("click", (e) => {
+      const btn = e.target.closest(".page-btn");
+      if (!btn || btn.disabled) return;
+      currentPage = Number(btn.dataset.page);
+      renderPage();
+      grid.scrollIntoView({ behavior: "smooth", block: "start" });
+    });
+  }
+
+  renderPage();
 })();

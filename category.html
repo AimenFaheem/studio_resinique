@@ -21,7 +21,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Dancing+Script:wght@500;600;700&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet" />
 
-  <link rel="stylesheet" href="style.css?v=20261014a" />
+  <link rel="stylesheet" href="style.css?v=20261021a" />
 </head>
 <body>
 
@@ -86,6 +86,7 @@
               </a>
             </div>
             <a class="dropdown-foot link-arrow" href="index.html#categories">View all categories <span class="arrow">&rarr;</span></a>
+            <a class="dropdown-foot link-arrow" href="category.html?cat=all">Shop all jewelry <span class="arrow">&rarr;</span></a>
           </div>
         </div>
         <a href="blog.html">Journal</a>
@@ -122,6 +123,10 @@
         <h1 id="catTitle">Collection</h1>
         <p class="cat-blurb" id="catBlurb"></p>
         <p class="cat-count" id="catCount"></p>
+        <div class="cat-search-bar" id="catSearchBar" hidden>
+          <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="7"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+          <input type="search" id="catSearchInput" placeholder="Search earrings, rings, jhumka…" aria-label="Search all jewelry" />
+        </div>
       </div>
     </section>
 
@@ -129,6 +134,7 @@
     <section class="cat-products">
       <div class="container">
         <div class="product-grid" id="categoryGrid"></div>
+        <div class="cat-pagination" id="catPagination"></div>
       </div>
     </section>
   </main>
@@ -296,6 +302,6 @@
 
   <script src="catalog.js"></script>
   <script src="category.js"></script>
-  <script src="script.js?v=20261014a"></script>
+  <script src="script.js?v=20261021a"></script>
 </body>
 </html>
