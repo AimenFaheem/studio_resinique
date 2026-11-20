@@ -179,6 +179,11 @@ ul, ol { list-style: none; }
   letter-spacing: 0.01em;
   line-height: 1;
 }
+.logo-mark {
+  height: 56px;
+  width: auto;
+  display: block;
+}
 
 .nav {
   display: flex;
@@ -2755,6 +2760,7 @@ img.img-error { background: var(--line); }
   .header-inner { gap: 0.5rem; }
   .logo-img { width: 36px; height: 36px; }
   .logo-text { font-size: 1.3rem; }
+  .logo-mark { height: 42px; }
 }
 
 @media (max-width: 600px) {
