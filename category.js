@@ -17,7 +17,7 @@
         : [];
     data = {
       title: "All Jewelry",
-      blurb: "Every handmade piece in one place — search or browse by page.",
+      blurb: "Every handmade resin piece in one place — search or browse by page.",
       items: allItems,
     };
   } else {
@@ -55,12 +55,17 @@
     return;
   }
 
-  document.title = data.title + " — Studio Resinique";
+  // SEO: every category page title/description leads with "Resin
+  // Jewelry" so it reads well for that core keyword in search results.
+  const pageTitle = isAll
+    ? "Shop All Resin Jewelry | Studio Resinique"
+    : data.title + " — Resin Jewelry | Studio Resinique";
+  document.title = pageTitle;
   if (titleEl) titleEl.textContent = data.title;
   if (blurbEl) blurbEl.textContent = data.blurb;
   if (crumbEl) crumbEl.textContent = data.title;
   if (descMetaEl) descMetaEl.content = data.blurb;
-  if (ogTitleEl) ogTitleEl.content = data.title + " — Studio Resinique";
+  if (ogTitleEl) ogTitleEl.content = pageTitle;
   if (ogDescEl) ogDescEl.content = data.blurb;
   if (ogImageEl && data.items[0]) {
     ogImageEl.content = "https://studioresinique.com/" + data.items[0].image;
@@ -71,7 +76,7 @@
   const cardHtml = (it) => `
       <article class="product">
         <div class="product-media">
-          <img src="${it.image}" alt="${it.name}" loading="lazy" />
+          <img src="${it.image}" alt="${it.name} — Handmade Resin Jewelry" loading="lazy" />
           ${it.badge ? `<span class="product-badge">${it.badge}</span>` : ""}
         </div>
         <div class="product-info">

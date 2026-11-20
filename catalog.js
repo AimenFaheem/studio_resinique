@@ -170,7 +170,7 @@ const CATALOG = {
   accessories: {
     title: "Other Accessories",
     blurb:
-      "The little extras — hair clips, brooches, and trinkets, each poured and finished by hand.",
+      "The little extras — hair clips, pens, and trinkets, each hand-poured in resin and finished by hand.",
     items: [
       { name: "Stardust Glitter Pen", image: "images/accessory-1.jpeg", price: 550, meta: "Accessory" },
       { name: "Blossom Hair Clip Duo", image: "images/accessory-2.png", price: 380, meta: "Set of 2", badge: "New" },
