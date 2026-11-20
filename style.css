@@ -1495,7 +1495,11 @@ img.img-error { background: var(--line); }
   padding-bottom: 3rem;
   border-bottom: 1px solid rgba(255,255,255,0.12);
 }
-.footer-brand .logo { color: var(--cream); }
+.footer-brand .logo-mark {
+  background: var(--ivory);
+  padding: 0.5rem 0.9rem;
+  border-radius: var(--radius-sm);
+}
 .footer-brand p {
   margin-top: 1rem;
   color: rgba(250,246,241,0.65);
@@ -2648,12 +2652,7 @@ img.img-error { background: var(--line); }
     border-bottom: 1px solid var(--line);
   }
   .nav-mobile-logo-brand { display: flex; align-items: center; gap: 0.7rem; }
-  .nav-mobile-logo img { width: 40px; height: 40px; border-radius: 50%; object-fit: cover; flex-shrink: 0; }
-  .nav-mobile-logo span {
-    font-family: "Dancing Script", "Cormorant Garamond", cursive;
-    font-size: 1.5rem;
-    font-weight: 700;
-  }
+  .nav-mobile-logo .logo-mark { height: 44px; }
   .nav-close {
     display: grid;
     place-items: center;
