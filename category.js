@@ -38,7 +38,7 @@
   const ogDescEl = document.getElementById("ogDescription");
   const ogUrlEl = document.getElementById("ogUrl");
   const ogImageEl = document.getElementById("ogImage");
-  const pageUrl = "https://studioresinique.com/category.html" + (slug ? "?cat=" + encodeURIComponent(slug) : "");
+  const pageUrl = "https://studioresinique.com/category" + (slug ? "?cat=" + encodeURIComponent(slug) : "");
 
   if (canonicalEl) canonicalEl.href = pageUrl;
   if (ogUrlEl) ogUrlEl.content = pageUrl;
